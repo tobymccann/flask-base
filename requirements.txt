@@ -35,6 +35,7 @@ requests==2.13.0
 rollbar
 rq==0.7.1
 six==1.10.0
+slugify
 SQLAlchemy==1.1.5
 webassets==0.12.1
 Werkzeug==0.11.15
