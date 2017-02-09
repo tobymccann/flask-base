@@ -1,10 +1,9 @@
-# flask-base [![Circle CI](https://circleci.com/gh/hack4impact/flask-base.svg?style=svg)](https://circleci.com/gh/hack4impact/flask-base) [![Stories in Ready](https://badge.waffle.io/hack4impact/flask-base.png?label=ready&title=Ready)](https://waffle.io/hack4impact/flask-base) [![Code Climate](https://codeclimate.com/github/hack4impact/flask-base/badges/gpa.svg)] (https://codeclimate.com/github/hack4impact/flask-base/coverage) [![Issue Count](https://codeclimate.com/github/hack4impact/flask-base/badges/issue_count.svg)](https://codeclimate.com/github/hack4impact/flask-base) ![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg)
+# flask-base [Code Climate](https://codeclimate.com/github/hack4impact/flask-base/badges/gpa.svg)] (https://codeclimate.com/github/hack4impact/flask-base/coverage) [![Issue Count](https://codeclimate.com/github/hack4impact/flask-base/badges/issue_count.svg)](https://codeclimate.com/github/hack4impact/flask-base) ![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg)
 <img src="readme_media/logo@2x.png" width="400"/>
 
 A Flask application template with the boilerplate code already done for you. 
 
 
-**Documentation available at [http://hack4impact.github.io/flask-base](http://hack4impact.github.io/flask-base).**
 
 ## What's included?
 
@@ -77,7 +76,7 @@ MAIL_USERNAME=SendgridUsername
 MAIL_PASSWORD=SendgridPassword
 SECRET_KEY=SuperRandomStringToBeUsedForEncryption
 ```
-**Note: do not include the `.env` file in any commits. This should remain private.**
+**Note: do not include the `config.env` file in any commits. This should remain private.**
 
 ##### Install the dependencies
 
@@ -87,7 +86,7 @@ $ pip install -r requirements.txt
 
 ##### Other dependencies for running locally
 
-You need to [Redis](http://redis.io/), and [Sass](http://sass-lang.com/). Chances are, these commands will work:
+You need to install [Redis](http://redis.io/), and [Sass](http://sass-lang.com/). Chances are, these commands will work:
 
 
 **Sass:**
@@ -158,8 +157,7 @@ Before you submit changes to flask-base, you may want to auto format your code w
 
 
 ## Contributing
-
-Contributions are welcome! Check out our [Waffle board](https://waffle.io/hack4impact/flask-base) which automatically syncs with this project's GitHub issues. Please refer to our [Code of Conduct](./CONDUCT.md) for more information.
+Contributions are welcome! Check out our [Waffle board](https://waffle.io/tobymccann/flask-base) which automatically syncs with this project's GitHub issues. Please refer to our [Code of Conduct](./CONDUCT.md) for more information.
 
 ## Documentation Changes
 
