@@ -1,7 +1,9 @@
 alembic==0.8.10
 appdirs==1.4.0
+billiard
 blinker==1.4
 click==6.7
+celery
 Faker==0.7.7
 Flask==0.12
 Flask-Assets==0.12
@@ -20,6 +22,7 @@ itsdangerous==0.24
 Jinja2==2.9.5
 jsmin==2.2.1
 jsonpickle==0.9.4
+kombu
 Mako==1.0.6
 MarkupSafe==0.23
 packaging==16.8
