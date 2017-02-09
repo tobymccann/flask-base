@@ -3,7 +3,7 @@ webassets-external/
 .DS_Store
 *.pyc
 *.pyo
-env
+env/
 venv
 .env
 env*
@@ -13,3 +13,4 @@ dist
 *.sqlite
 .idea
 dump.rdb
+config.env

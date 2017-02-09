@@ -1,7 +1,8 @@
 import os
 import urllib.parse
 
-from raygun4py.middleware import flask as flask_raygun
+import rollbar
+from rollbar.logger import RollbarHandler
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -12,7 +13,7 @@ class Config:
         SECRET_KEY = os.environ.get('SECRET_KEY')
     else:
         SECRET_KEY = 'SECRET_KEY_ENV_VAR_NOT_SET'
-        print('SECRET KEY ENV VAR NOT SET! SHOULD NOT SEE IN PRODUDCTION')
+        print('SECRET KEY ENV VAR NOT SET! SHOULD NOT SEE IN PRODUCTION')
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 
     MAIL_SERVER = 'smtp.sendgrid.net'
@@ -30,7 +31,8 @@ class Config:
 
     REDIS_URL = os.getenv('REDISTOGO_URL') or 'http://localhost:6379'
 
-    RAYGUN_APIKEY = os.environ.get('RAYGUN_APIKEY')
+    ROLLBAR_ACCESS_TOKEN = os.environ.get('ROLLBAR_ACCESS_TOKEN')
+
 
     # Parse the REDIS_URL to set RQ config variables
     urllib.parse.uses_netloc.append('redis')
@@ -71,7 +73,20 @@ class ProductionConfig(Config):
         Config.init_app(app)
         assert os.environ.get('SECRET_KEY'), 'SECRET_KEY IS NOT SET!'
 
-        flask_raygun.Provider(app, app.config['RAYGUN_APIKEY']).attach()
+        rollbar.init('ROLLBAR_ACCESS_TOKEN')
+
+        logger = logging.getLogger(__name__)
+        logger.setLevel(logging.DEBUG)
+
+        # report WARNING and above to Rollbar
+        rollbar_handler = RollbarHandler(history_size=3)
+        rollbar_handler.setLevel(logging.WARNING)
+
+        # gather history for DEBUG+ log messages
+        rollbar_handler.setHistoryLevel(logging.DEBUG)
+
+        # attach the history handler to the root logger
+        logger.addHandler(rollbar_handler)
 
 
 class HerokuConfig(ProductionConfig):
