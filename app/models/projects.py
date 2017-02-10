@@ -1,9 +1,8 @@
 """
 SQLAlchemy data model for the web service
 """
-from slugify.main import Slugify
+from slugify import Slugify
 from .. import db
-
 
 
 

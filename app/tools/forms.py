@@ -1,58 +1,81 @@
+
+"""
+WTF forms for the web service
+"""
 from flask_wtf import Form
-from wtforms import ValidationError
-from wtforms.ext.sqlalchemy.fields import QuerySelectField
-from wtforms.fields import PasswordField, StringField, SubmitField
-from wtforms.fields.html5 import EmailField
-from wtforms.validators import Email, EqualTo, InputRequired, Length
-
+from wtforms import ValidationError, StringField, TextAreaField
+from wtforms.validators import DataRequired
+from wtforms.ext.sqlalchemy.orm import model_form
 from .. import db
-from ..models import Role, User
+from ..models import TemplateValueSet, TemplateVariable
+from ..utils import MakoConfigGenerator
+from ..utils.confgen import TemplateSyntaxException
 
 
-class ChangeUserEmailForm(Form):
-    email = EmailField(
-        'New email', validators=[InputRequired(), Length(1, 64), Email()])
-    submit = SubmitField('Update email')
 
-    def validate_email(self, field):
-        if User.query.filter_by(email=field.data).first():
-            raise ValidationError('Email already registered.')
+def reserved_template_variable_names(form, field):
+    """
+    check reserved template variable names
+    :param form:
+    :param field:
+    :return:
+    """
+    reserved_template_names = [
+        # automatically added when creating a template value set (name of the object)
+        "hostname",
+    ]
 
-
-class ChangeAccountTypeForm(Form):
-    role = QuerySelectField(
-        'New account type',
-        validators=[InputRequired()],
-        get_label='name',
-        query_factory=lambda: db.session.query(Role).order_by('permissions'))
-    submit = SubmitField('Update role')
-
-
-class InviteUserForm(Form):
-    role = QuerySelectField(
-        'Account type',
-        validators=[InputRequired()],
-        get_label='name',
-        query_factory=lambda: db.session.query(Role).order_by('permissions'))
-    first_name = StringField(
-        'First name', validators=[InputRequired(), Length(1, 64)])
-    last_name = StringField(
-        'Last name', validators=[InputRequired(), Length(1, 64)])
-    email = EmailField(
-        'Email', validators=[InputRequired(), Length(1, 64), Email()])
-    submit = SubmitField('Invite')
-
-    def validate_email(self, field):
-        if User.query.filter_by(email=field.data).first():
-            raise ValidationError('Email already registered.')
+    for name in reserved_template_names:
+        if field.data == name:
+            raise ValidationError("%s is reserved by the application, please choose another one" % name)
 
 
-class NewUserForm(InviteUserForm):
-    password = PasswordField(
-        'Password',
-        validators=[
-            InputRequired(), EqualTo('password2', 'Passwords must match.')
-        ])
-    password2 = PasswordField('Confirm password', validators=[InputRequired()])
+def verify_template_syntax(form, field):
+    """
+    This function verifies the template syntax by creating a dummy template result
+    :return:
+    """
+    template_string = field.data
 
-    submit = SubmitField('Create')
+    # create MakoConfigGenerator instance and parse the template with dummy values
+    dcg = MakoConfigGenerator(template_string=template_string)
+    for var in dcg.template_variables:
+        dcg.set_variable_value(variable=var, value="test")
+
+    try:
+        dcg.get_rendered_result()
+
+    except TemplateSyntaxException as ex:
+        raise ValidationError("Invalid template, please correct the following error: %s" % str(ex))
+
+
+class ConfigTemplateForm(Form):
+    name = StringField("name", validators=[DataRequired()])
+    template_content = TextAreaField("template content", validators=[verify_template_syntax])
+
+
+class EditConfigTemplateValuesForm(Form):
+    csv_content = TextAreaField("Template Value Sets")
+
+
+TemplateValueSetForm = model_form(
+    TemplateValueSet,
+    base_class=Form,
+    db_session=db.session,
+    exclude_fk=True,
+    exclude=['config_template']
+)
+
+TemplateVariableForm = model_form(
+    TemplateVariable,
+    base_class=Form,
+    db_session=db.session,
+    exclude_fk=True,
+    field_args={
+        "var_name_slug": {
+            "label": "Variable Name",
+            'validators': [reserved_template_variable_names]
+        }
+    },
+    exclude=['config_template']
+)

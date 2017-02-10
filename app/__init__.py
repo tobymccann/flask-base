@@ -43,8 +43,8 @@ def create_app(config_name):
     RQ(app)
 
     # setup the celery client
-    #celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
-    #celery.conf.update(app.config)
+    celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
+    celery.conf.update(app.config)
 
     # Register Jinja template functions
     from .utils import register_template_utils
@@ -79,5 +79,8 @@ def create_app(config_name):
 
     from .tools import tools as tools_blueprint
     app.register_blueprint(tools_blueprint, url_prefix='/tools')
+
+    from .projects import projects as projects_blueprint
+    app.register_blueprint(projects_blueprint, url_prefix='/projects')
 
     return app

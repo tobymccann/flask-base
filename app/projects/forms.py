@@ -1,8 +1,4 @@
 from flask_wtf import Form
-from wtforms import ValidationError
-from wtforms.ext.sqlalchemy.fields import QuerySelectField
-
-
 from .. import db
 
 
