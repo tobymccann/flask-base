@@ -8,15 +8,11 @@
     <link rel="shortcut icon" href="{{ url_for("static", filename="images/favicon.ico") }}" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="{{ url_for("static", filename="images/apple-touch-icon.png") }}">
 
-    <script src="{{ url_for("static", filename="vendor/jquery.min.js") }}"></script>
-    <link rel="stylesheet" href="{{ url_for("static", filename="css/uikit.almost-flat.min.css") }}">
-    <link rel="stylesheet" href="{{ url_for("static", filename="css/components/sticky.almost-flat.min.css") }}">
-    <link rel="stylesheet" href="{{ url_for("static", filename="css/components/notify.almost-flat.min.css") }}">
-    <link rel="stylesheet" href="{{ url_for("static", filename="css/components/tooltip.min.css") }}">
-    <script src="{{ url_for("static", filename="js/uikit.min.js") }}"></script>
-    <script src="{{ url_for("static", filename="js/components/sticky.min.js") }}"></script>
-    <script src="{{ url_for("static", filename="js/components/notify.min.js") }}"></script>
-    <script src="{{ url_for("static", filename="js/components/tooltip.min.js") }}"></script>
+    {% assets 'vendor_css' %}<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">{% endassets %}
+    {% assets 'app_css' %}<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">{% endassets %}
+
+    {% assets 'vendor_js' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+    {% assets 'app_js' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
     <style type="text/css">
         /* reformat the notification container */
         body {
@@ -31,7 +27,7 @@
     </style>
 </head>
 <body>
-    <div class="uk-container uk-container-center">
+    <div class="ui container">
 		<!-- Navigation Bar -->
         <nav class="uk-navbar" data-uk-sticky="{top:10}">
             <a class="uk-navbar-brand uk-hidden-small" href="{{ url_for("home") }}"><span class="uk-icon-cogs"></span> Network Configuration Generator</a>
