@@ -4,8 +4,8 @@ export utility functions
 import logging
 import os
 
-from app.models import TemplateValueSet
-from app import app
+from ..models import TemplateValueSet
+from flask import current_app
 
 logger = logging.getLogger("confgen")
 
@@ -70,7 +70,7 @@ def export_configuration_to_local_ftp(template_value_set):
     if type(template_value_set) is not TemplateValueSet:
         raise ValueError
 
-    export_configuration_to_file_system(template_value_set, app.config["FTP_DIRECTORY"])
+    export_configuration_to_file_system(template_value_set, current_app.config["FTP_DIRECTORY"])
 
 
 def export_configuration_to_local_tftp(template_value_set):
@@ -87,4 +87,4 @@ def export_configuration_to_local_tftp(template_value_set):
     if type(template_value_set) is not TemplateValueSet:
         raise ValueError
 
-    export_configuration_to_file_system(template_value_set, app.config["TFTP_DIRECTORY"])
+    export_configuration_to_file_system(template_value_set, current_app.config["TFTP_DIRECTORY"])

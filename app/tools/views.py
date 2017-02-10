@@ -48,14 +48,14 @@ from .forms import TemplateVariableForm
 logger = logging.getLogger()
 
 
-@tools.route('/')
+@tools.route('/tools')
 @login_required
 def index():
     """Tool dashboard page."""
-    return render_template('tools/index.html')
+    return render_template('tools/base.html')
 
 
-@tools.route("/project/<int:project_id>/template/<int:config_template_id>")
+@tools.route("/projects/<int:project_id>/template/<int:config_template_id>")
 def view_config_template(project_id, config_template_id):
     """read-only view of a single Config Template
 
@@ -71,7 +71,7 @@ def view_config_template(project_id, config_template_id):
     )
 
 
-@tools.route("/project/<int:project_id>/configtemplate/add", methods=["GET", "POST"])
+@tools.route("/projects/<int:project_id>/configtemplate/add", methods=["GET", "POST"])
 def add_config_template(project_id):
     """add a new Config Template
 
@@ -127,7 +127,7 @@ def add_config_template(project_id):
     )
 
 
-@tools.route("/project/<int:project_id>/configtemplate/<int:config_template_id>/edit", methods=["GET", "POST"])
+@tools.route("/projects/<int:project_id>/configtemplate/<int:config_template_id>/edit", methods=["GET", "POST"])
 def edit_config_template(project_id, config_template_id):
     """edit a Config Template
 
@@ -188,7 +188,7 @@ def edit_config_template(project_id, config_template_id):
 
 
 @tools.route(
-    "/project/<int:project_id>/configtemplate/<int:config_template_id>/edit_all",
+    "/projects/<int:project_id>/configtemplate/<int:config_template_id>/edit_all",
     methods=["GET", "POST"]
 )
 def edit_all_config_template_values(project_id, config_template_id):
@@ -269,7 +269,7 @@ def edit_all_config_template_values(project_id, config_template_id):
     )
 
 
-@tools.route("/project/<int:project_id>/configtemplate/<int:config_template_id>/delete", methods=["GET", "POST"])
+@tools.route("/projects/<int:project_id>/configtemplate/<int:config_template_id>/delete", methods=["GET", "POST"])
 def delete_config_template(project_id, config_template_id):
     """delete the Config Template
 
@@ -302,7 +302,7 @@ def delete_config_template(project_id, config_template_id):
     )
 
 
-@tools.route("/project/<int:project_id>/template/<int:config_template_id>/export")
+@tools.route("/projects/<int:project_id>/template/<int:config_template_id>/export")
 def export_configurations(project_id, config_template_id):
     """
     Export the configuration to various locations
@@ -323,7 +323,7 @@ def export_configurations(project_id, config_template_id):
         appliance_status=verify_appliance_status()
     )
 
-@tools.route("/project/template/<int:config_template_id>/valueset/<int:template_value_set_id>/config")
+@tools.route("/projects/template/<int:config_template_id>/valueset/<int:template_value_set_id>/config")
 def view_config(config_template_id, template_value_set_id):
     """view the resulting configuration
 
@@ -348,7 +348,7 @@ def view_config(config_template_id, template_value_set_id):
     )
 
 
-@tools.route("/project/template/<int:config_template_id>/valueset/<int:template_value_set_id>/config_download")
+@tools.route("/projects/template/<int:config_template_id>/valueset/<int:template_value_set_id>/config_download")
 def download_config(config_template_id, template_value_set_id):
     """download the resulting configuration
 
@@ -367,7 +367,7 @@ def download_config(config_template_id, template_value_set_id):
     return response
 
 
-@tools.route("/project/<int:project_id>/template/<int:config_template_id>/download_configs")
+@tools.route("/projects/<int:project_id>/template/<int:config_template_id>/download_configs")
 def download_all_config_as_zip(project_id, config_template_id):
     """generate all configuration files and download them as a ZIP archive
 
@@ -499,7 +499,7 @@ def task_status_json(task_id):
     response["data"] = task.info
     return jsonify(response)
 
-@tools.route("/project/template/<int:config_template_id>/valueset/<int:template_value_set_id>/")
+@tools.route("/projects/template/<int:config_template_id>/valueset/<int:template_value_set_id>/")
 def view_template_value_set(config_template_id, template_value_set_id):
     """view a single Template Value Set
 
@@ -516,7 +516,7 @@ def view_template_value_set(config_template_id, template_value_set_id):
     )
 
 
-@tools.route("/project/template/<int:config_template_id>/valueset/add", methods=["GET", "POST"])
+@tools.route("/projects/template/<int:config_template_id>/valueset/add", methods=["GET", "POST"])
 def add_template_value_set(config_template_id):
     """add a new Template Value Set
 
@@ -569,7 +569,7 @@ def add_template_value_set(config_template_id):
 
 
 @tools.route(
-    "/project/template/<int:config_template_id>/valueset/<int:template_value_set_id>/edit",
+    "/projects/template/<int:config_template_id>/valueset/<int:template_value_set_id>/edit",
     methods=["GET", "POST"]
 )
 def edit_template_value_set(config_template_id, template_value_set_id):
@@ -633,7 +633,7 @@ def edit_template_value_set(config_template_id, template_value_set_id):
 
 
 @tools.route(
-    "/project/template/<int:config_template_id>/valueset/<int:template_value_set_id>/delete",
+    "/projects/template/<int:config_template_id>/valueset/<int:template_value_set_id>/delete",
     methods=["GET", "POST"]
 )
 def delete_template_value_set(config_template_id, template_value_set_id):
@@ -670,7 +670,7 @@ def delete_template_value_set(config_template_id, template_value_set_id):
         project=config_template.project
     )
 
-@tools.route("/project/template/<int:config_template_id>/variable/<int:template_variable_id>/edit", methods=["GET",
+@tools.route("/projects/template/<int:config_template_id>/variable/<int:template_variable_id>/edit", methods=["GET",
                                                                                                              "POST"])
 def edit_template_variable(config_template_id, template_variable_id):
     """edit a Template Variable

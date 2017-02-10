@@ -1,7 +1,7 @@
 """
 SQLAlchemy data model for the web service
 """
-from slugify import Slugify
+from slugify import slugify
 from .. import db
 from ..exception import TemplateVariableNotFoundException, TemplateValueNotFoundException
 from ..utils import MakoConfigGenerator
@@ -38,7 +38,7 @@ class TemplateValue(db.Model):
         :param string:
         :return:
         """
-        return Slugify(separator="_", to_lower=False)(string)
+        return slugify(separator="_", to_lower=False)(string)
 
     @property
     def var_name(self):
@@ -103,7 +103,7 @@ class TemplateValueSet(db.Model):
         :param string:
         :return:
         """
-        return Slugify(separator="_", to_lower=False)(string)
+        return slugify(separator="_", to_lower=False)(string)
 
     def copy_variables_from_config_template(self):
         """this function copies all variables from the associated configuration template object
@@ -248,7 +248,7 @@ class TemplateVariable(db.Model):
 
     @var_name.setter
     def var_name(self, value):
-        self.var_name_slug = Slugify(separator="_", to_lower=False)(value)
+        self.var_name_slug = slugify(separator="_", to_lower=False)(value)
 
     def __init__(self, config_template, var_name, description=""):
         self.var_name = var_name
@@ -287,7 +287,7 @@ class ConfigTemplate(db.Model):
 
     @property
     def name_slug(self):
-        return Slugify(to_lower=False)(self.name)
+        return slugify(to_lower=False)(self.name)
 
     @property
     def template_content(self):
@@ -325,7 +325,7 @@ class ConfigTemplate(db.Model):
         :param string:
         :return:
         """
-        return Slugify(separator="_", to_lower=False)(string)
+        return slugify(separator="_", to_lower=False)(string)
 
     def _create_variables_from_template_content(self):
         dcg = MakoConfigGenerator(template_string=self.template_content)

@@ -1,7 +1,7 @@
 import datetime
 import time
 import logging
-from app import celery, db
+from . import celery, db
 from .models import ConfigTemplate
 from .utils.export import export_configuration_to_local_ftp, export_configuration_to_local_tftp
 

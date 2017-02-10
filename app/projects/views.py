@@ -5,6 +5,7 @@ import logging
 from flask import render_template, url_for, redirect, request, flash
 from sqlalchemy.exc import IntegrityError
 
+from . import projects
 from .. import db
 from .forms import ProjectForm
 from ..models import Project
@@ -13,18 +14,16 @@ logger = logging.getLogger()
 
 
 
-
-
-@projects.route("/project/")
+@projects.route("/projects/")
 def view_all_projects():
     """view a list of all Projects
 
     :return:
     """
-    return render_template("project/view_all_projects.html", projects=Project.query.all())
+    return render_template("projects/view_all_projects.html", projects=Project.query.all())
 
 
-@projects.route("/project/<int:project_id>")
+@projects.route("/projects/<int:project_id>")
 def view_project(project_id):
     """View a single Project
 
@@ -32,12 +31,12 @@ def view_project(project_id):
     :return:
     """
     return render_template(
-            "project/view_project.html",
+        "projects/view_project.html",
             project=Project.query.filter(Project.id == project_id).first_or_404()
     )
 
 
-@projects.route("/project/add", methods=["GET", "POST"])
+@projects.route("/projects/add", methods=["GET", "POST"])
 def add_project():
     """add a new Project
 
@@ -74,10 +73,10 @@ def add_project():
             flash(msg, "error")
             db.session.rollback()
 
-    return render_template("project/add_project.html", form=form)
+    return render_template("projects/add_project.html", form=form)
 
 
-@projects.route("/project/<int:project_id>/edit", methods=["GET", "POST"])
+@projects.route("/projects/<int:project_id>/edit", methods=["GET", "POST"])
 def edit_project(project_id):
     """edit a Project
 
@@ -115,10 +114,10 @@ def edit_project(project_id):
             flash(msg, "error")
             db.session.rollback()
 
-    return render_template("project/edit_project.html", project=project, form=form)
+    return render_template("projects/edit_project.html", project=project, form=form)
 
 
-@projects.route("/project/<int:project_id>/delete", methods=["GET", "POST"])
+@projects.route("/projects/<int:project_id>/delete", methods=["GET", "POST"])
 def delete_project(project_id):
     """delete the Project
 
@@ -142,4 +141,4 @@ def delete_project(project_id):
         flash("Project <strong>%s</strong> successful deleted" % project.name, "success")
         return redirect(url_for("view_all_projects"))
 
-    return render_template("project/delete_project.html", project=project)
+    return render_template("projects/delete_project.html", project=project)

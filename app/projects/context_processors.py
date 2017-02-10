@@ -1,7 +1,8 @@
+from . import projects
 from ..models import Project
 
 
-@app.context_processor
+@projects.context_processor
 def inject_all_project_data():
     """
     returns all Project names and ID's from the database to build the sidebar

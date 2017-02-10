@@ -1,7 +1,7 @@
 """
 SQLAlchemy data model for the web service
 """
-from slugify import Slugify
+from slugify import slugify
 from .. import db
 
 
@@ -24,7 +24,7 @@ class Project(db.Model):
 
     @property
     def name_slug(self):
-        return Slugify(to_lower=False)(self.name)
+        return slugify(to_lower=False)(self.name)
 
     def __init__(self, name):
         self.name = name

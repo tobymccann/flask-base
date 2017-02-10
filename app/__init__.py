@@ -19,6 +19,7 @@ mail = Mail()
 db = SQLAlchemy()
 csrf = CSRFProtect()
 compress = Compress()
+celery = Celery()
 
 # Set up Flask-Login
 login_manager = LoginManager()
@@ -43,11 +44,11 @@ def create_app(config_name):
     RQ(app)
 
     # setup the celery client
-    celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
+    celery = Celery(app, broker=app.config['CELERY_BROKER_URL'])
     celery.conf.update(app.config)
 
     # Register Jinja template functions
-    from .utils import register_template_utils
+    from .template_utils import register_template_utils
     register_template_utils(app)
 
     # Set up asset pipeline
