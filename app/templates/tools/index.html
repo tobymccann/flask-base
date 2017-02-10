@@ -20,20 +20,22 @@
     </a>
 {% endmacro %}
 
+{% extends "tools/base.html" %}
+{% block title %}Network Configuration Generator{% endblock %}
+
 {% block content %}
-    <div class="ui stackable centered grid container">
-        <div class="twelve wide column">
-            <h2 class="ui header">
-                Tools Dashboard
-            </h2>
-            <div class="ui two column stackable grid">
-                {{ dashboard_option('Config Generator', 'tools.config_gen',
-                                    description='Create network device configurations', icon='users icon') }}
-                {{ dashboard_option('Existing Configurations', 'tools.get_config',
-                                    description='View existing device configurations', icon='add user icon') }}
-                {{ dashboard_option('Template Admin', 'tools.template_admin',
-                                    description='Administer network templates', icon='add user icon') }}
-            </div>
-        </div>
-    </div>
+    <h1><span class="uk-icon-cogs"></span> Network Configuration Generator</h1>
+
+    <p class="uk-text-large uk-text-primary">
+        This Web service provides a simple configuration generator function for network equipment like Routers and Switches.
+        The following
+    </p>
+
+    {% if all_project_data|length == 0 %}
+        <p class="uk-text-large"><a class="uk-button-link" href="{{ url_for("add_project") }}" id="create_project">Create your first Project here!</a></p>
+    {% else %}
+        <p class="uk-text-large">Please choose a project or <a class="uk-button-link" href="{{ url_for("add_project") }}" id="create_project">create a new Project</a>.
+
+        {% include 'project/_projects_table.html' %}
+    {% endif %}
 {% endblock %}

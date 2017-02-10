@@ -1,6 +1,5 @@
 from flask import abort, flash, redirect, render_template, url_for, request, jsonify, make_response, send_file
 from flask_login import current_user, login_required
-from flask_rq import get_queue
 
 from . import tools
 from .. import db
@@ -41,7 +40,6 @@ from .forms import TemplateValueSetForm
 """
 views for the Template Variable data object
 """
-
 from ..models import ConfigTemplate, TemplateVariable
 from .forms import TemplateVariableForm
 
@@ -55,38 +53,6 @@ logger = logging.getLogger()
 def index():
     """Tool dashboard page."""
     return render_template('tools/index.html')
-
-
-@tools.route('/config-gen', methods=['GET', 'POST'])
-@login_required
-def config_gen():
-    """Create a new user."""
-    form = NewUserForm()
-    if form.validate_on_submit():
-        user = User(
-            role=form.role.data,
-            first_name=form.first_name.data,
-            last_name=form.last_name.data,
-            email=form.email.data,
-            password=form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('User {} successfully created'.format(user.full_name()),
-              'form-success')
-    return render_template('tools/config_gen.html', form=form)
-
-
-
-
-@tools.route('/users')
-@login_required
-@admin_required
-def get_config():
-    """View all registered users."""
-    users = User.query.all()
-    roles = Role.query.all()
-    return render_template(
-        'tools/get_config.html', users=users, roles=roles)
 
 
 @tools.route("/project/<int:project_id>/template/<int:config_template_id>")
@@ -425,26 +391,6 @@ def download_all_config_as_zip(project_id, config_template_id):
     return send_file(memory_file, attachment_filename=config_template.name + "_configs.zip", as_attachment=True)
 
 
-@tools.route('/template-admin')
-@login_required
-@admin_required
-def template_admin(template_id):
-    """View a user's profile."""
-
-    return render_template('tools/template_admin.html')
-
-
-@tools.route('/user/<int:user_id>/delete')
-@login_required
-@admin_required
-def delete_user_request(user_id):
-    """Request deletion of a config."""
-    user = User.query.filter_by(id=user_id).first()
-    if user is None:
-        abort(404)
-    return render_template('tools/manage_user.html', user=user)
-
-
 @tools.route('/shell')
 @login_required
 def shell():
@@ -472,7 +418,7 @@ def template_syntax():
 
     :return:
     """
-    return render_template("template-syntax.html")
+    return render_template("tools/template-syntax.html")
 
 
 @tools.route("/appliance/service_status")
