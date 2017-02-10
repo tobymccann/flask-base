@@ -408,7 +408,7 @@ def how_to_use():
 
     :return:
     """
-    return render_template("tools/how-to-use.html")
+    return render_template("tools/how_to_use.html")
 
 
 @tools.route("/template-syntax")
@@ -418,7 +418,7 @@ def template_syntax():
 
     :return:
     """
-    return render_template("tools/template-syntax.html")
+    return render_template("tools/template_syntax.html")
 
 
 @tools.route("/appliance/service_status")
