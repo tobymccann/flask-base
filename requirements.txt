@@ -23,6 +23,7 @@ Jinja2==2.9.5
 jsmin==2.2.1
 jsonpickle==0.9.4
 kombu
+logging
 Mako==1.0.6
 MarkupSafe==0.23
 netifaces==0.10.5

@@ -1,6 +1,6 @@
 import os
 import urllib.parse
-
+import logging
 import rollbar
 from rollbar.logger import RollbarHandler
 
