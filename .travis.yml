@@ -1,3 +1,7 @@
+addons:
+  code_climate:
+    repo_token: a0d7224eb7113b8d05ea67536a6bdbb53510250b41cbf549366a9131b4b0b27e
+
 language: python
 python:
   - "3.6"
@@ -11,7 +15,3 @@ install:
 script:
   - find . -not -path '*/.eggs/*' -not -path './env/*' -name '*.py' | xargs flake8 --ignore E501
   - python manage.py test
-
-addons:
-  code_climate:
-    repo_token: a0d7224eb7113b8d05ea67536a6bdbb53510250b41cbf549366a9131b4b0b27e
