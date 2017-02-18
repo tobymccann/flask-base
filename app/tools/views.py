@@ -1,8 +1,16 @@
 import os
 from flask import abort, flash, redirect, render_template, url_for, request, jsonify, make_response, send_file
 from flask_login import login_required
+from flask_sqlalchemy import SQLAlchemy
 import csv
 import logging
+import requests
+import operator
+import re
+import nltk
+from nltk.corpus import stopwords
+from collections import Counter
+from bs4 import BeautifulSoup
 import io
 from io import BytesIO
 import time
@@ -10,13 +18,13 @@ import zipfile
 from .. import db, config
 from ..models import ConfigTemplate, Project, TemplateValueSet, TemplateVariable
 from sqlalchemy.exc import IntegrityError
-from .forms import ConfigTemplateForm, EditConfigTemplateValuesForm, TemplateValueSetForm, TemplateVariableForm
+from .forms import ConfigTemplateForm, EditConfigTemplateValuesForm, TemplateValueSetForm, TemplateVariableForm, TestForm
 from ..utils.appliance import get_local_ip_addresses, verify_appliance_status
 from ..utils.export import get_appliance_ftp_password
 from .. import celery
 from . import tools
 
-
+basedir = os.path.abspath(os.path.dirname(__file__))
 logger = logging.getLogger()
 
 
@@ -25,6 +33,53 @@ def index():
     """Tool dashboard page."""
     return render_template('tools/base.html')
 
+
+@tools.route("/test", methods=["GET", "POST"])
+def test():
+    errors = []
+    results = {}
+    form = TestForm()
+    if form.validate_on_submit():
+        # get url the user has entered
+        try:
+            url = form.url.data
+            r = requests.get(url)
+            print(r.text)
+        except:
+            errors.append(
+                "Unable to get URL. Please make sure it is valid and try again."
+            )
+            return render_template("tools/test.html", form=form, errors=errors)
+        if r:
+            # text processing
+            raw = BeautifulSoup(r.text, 'html.parser').get_text()
+            nltk.data.path.append(basedir + '/nltk_data')  # set the path
+            tokens = nltk.word_tokenize(raw)
+            text = nltk.Text(tokens)
+            # remove punctuation, count raw words
+            nonPunct = re.compile('.*[A-Za-z].*')
+            raw_words = [w for w in text if nonPunct.match(w)]
+            raw_word_count = Counter(raw_words)
+            # stop words
+            no_stop_words = [w for w in raw_words if w.lower() not in stopwords.words('english')]
+            no_stop_words_count = Counter(no_stop_words)
+            # save the results
+            results = sorted(
+                no_stop_words_count.items(),
+                key=operator.itemgetter(1),
+                reverse=True
+            )[:10]
+            try:
+                result = Result(
+                    url=url,
+                    result_all=raw_word_count,
+                    result_no_stop_words=no_stop_words_count
+                )
+                db.session.add(result)
+                db.session.commit()
+            except:
+                errors.append("Unable to add item to database.")
+    return render_template("tools/test.html", form=form, errors=errors, results=results)
 
 @tools.route("/projects/<int:project_id>/template/<int:config_template_id>")
 def view_config_template(project_id, config_template_id):
@@ -98,7 +153,7 @@ def add_config_template(project_id):
     )
 
 
-@tools.route("/projects/<int:project_id>/configtemplate/<int:config_template_id>/edit", methods=["GET", "POST"])
+@tools.route("/projects/<int:project_id>/configtemplate/<int:config_template_id>/edit")
 def edit_config_template(project_id, config_template_id):
     """edit a Config Template
 

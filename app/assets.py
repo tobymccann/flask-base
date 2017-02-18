@@ -6,5 +6,5 @@ app_js = Bundle('app.js', filters='jsmin', output='js/app.js')
 
 vendor_css = Bundle('vendor/semantic.css', 'vendor/components/*.css', output='css/vendor.css')
 
-vendor_js = Bundle('vendor/jquery-3.1.1.js', 'vendor/semantic.min.js', 'vendor/jquery.tablesort.js',
+vendor_js = Bundle('vendor/jquery-3.1.1.min.js', 'vendor/semantic.min.js', 'vendor/jquery.tablesort.min.js',
                    'vendor/zxcvbn.js', 'vendor/*.js', filters='jsmin', output='scripts/vendor.js')

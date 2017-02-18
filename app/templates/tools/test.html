@@ -1,0 +1,40 @@
+{% extends 'layouts/base.html' %}
+{% import 'macros/form_macros.html' as f %}
+
+{% block content %}
+    <div class="ui grid container">
+        <div class="eight wide computer sixteen wide mobile centered column">
+            <h2 class="ui dividing header">Testes</h2>
+
+            {{ f.render_form(form) }}
+
+            <br>
+            {% for error in errors %}
+                <h4>{{ error }}</h4>
+            {% endfor %}
+
+            {% if results %}
+                <h2>Frequencies</h2>
+                <br>
+                <div id="results">
+                    <table class="ui striped table">
+                        <thead>
+                            <tr>
+                                <th>Word</th>
+                                <th>Count</th>
+                            </tr>
+                        </thead>
+                        {% for result in results %}
+                            <tr>
+                                <td>{{ result[0] }}</td>
+                                <td>{{ result[1] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+{% endblock %}

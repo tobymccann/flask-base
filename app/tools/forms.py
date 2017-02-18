@@ -2,13 +2,24 @@
 WTF forms for the web service
 """
 from flask_wtf import FlaskForm
-from wtforms import ValidationError, StringField, TextAreaField
+from wtforms import ValidationError
+from wtforms.fields import (StringField, SubmitField,
+                            TextAreaField)
 from wtforms.validators import DataRequired
+from wtforms.validators import InputRequired, Length
 from wtforms.ext.sqlalchemy.orm import model_form
 from .. import db
 from ..models import TemplateValueSet, TemplateVariable
 from ..utils import MakoConfigGenerator
 from ..utils.confgen import TemplateSyntaxException
+
+
+
+class TestForm(FlaskForm):
+    url = StringField(
+        'URL', validators=[InputRequired(), Length(1, 64)])
+    submit = SubmitField('Submit')
+
 
 
 def reserved_template_variable_names(form, field):
