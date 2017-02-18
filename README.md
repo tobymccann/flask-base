@@ -1,9 +1,11 @@
-# flask-base [![Code Climate](https://codeclimate.com/github/tobymccann/flask-base/badges/gpa.svg)](https://codeclimate.com/github/tobymccann/flask-base/coverage)[![Issue Count](https://codeclimate.com/github/tobymccann/flask-base/badges/issue_count.svg)](https://codeclimate.com/github/tobymccann/flask-base) ![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg)
+# flask-base [![Build Status](https://travis-ci.org/tobymccann/flask-base.svg?branch=master)](https://travis-ci.org/tobymccann/flask-base)[![Code Climate](https://codeclimate.com/github/tobymccann/flask-base/badges/gpa.svg)](https://codeclimate.com/github/tobymccann/flask-base/coverage)[![Issue Count](https://codeclimate.com/github/tobymccann/flask-base/badges/issue_count.svg)](https://codeclimate.com/github/tobymccann/flask-base) ![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg)
 <img src="readme_media/logo@2x.png" width="400"/>
 
 A Flask application template with the boilerplate code already done for you. 
 
-
+## Credit
+Adapted from the Team @ Hack4Impact https://github.com/hack4impact/flask-base
+http://hack4impact.github.io/flask-base
 
 ## What's included?
 
@@ -71,8 +73,8 @@ $ xcode-select --install
 Create a file called `config.env` that contains environment variables in the following syntax: `ENVIRONMENT_VARIABLE=value`. For example,
 the mailing environment variables can be set as the following. Any mail service should work.
 ```
-MAIL_USERNAME=SendgridUsername
-MAIL_PASSWORD=SendgridPassword
+MAIL_USERNAME=EmailUsername
+MAIL_PASSWORD=EmailPassword
 SECRET_KEY=SuperRandomStringToBeUsedForEncryption
 ```
 **Note: do not include the `config.env` file in any commits. This should remain private.**
