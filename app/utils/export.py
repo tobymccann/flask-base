@@ -28,8 +28,8 @@ def get_appliance_ftp_password():
 
 def export_configuration_to_file_system(template_value_set, root_folder):
     """
-    export a configuration from a template value set to the root directory with the following
-    structure
+    export a configuration from a template value set to the root
+    directory with the following structure
 
         `/<project_name>/<config_template_name>/<hostname>_config.txt`
 
@@ -70,7 +70,8 @@ def export_configuration_to_local_ftp(template_value_set):
     if type(template_value_set) is not TemplateValueSet:
         raise ValueError
 
-    export_configuration_to_file_system(template_value_set, current_app.config["FTP_DIRECTORY"])
+    export_configuration_to_file_system(template_value_set,
+                                        current_app.config["FTP_DIRECTORY"])
 
 
 def export_configuration_to_local_tftp(template_value_set):
@@ -87,4 +88,5 @@ def export_configuration_to_local_tftp(template_value_set):
     if type(template_value_set) is not TemplateValueSet:
         raise ValueError
 
-    export_configuration_to_file_system(template_value_set, current_app.config["TFTP_DIRECTORY"])
+    export_configuration_to_file_system(template_value_set,
+                                        current_app.config["TFTP_DIRECTORY"])

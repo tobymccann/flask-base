@@ -14,17 +14,24 @@
          Advertisement
 *******************************/
 
+/*noinspection ALL*/
 .ui.ad {
   display: block;
   overflow: hidden;
   margin: 1em 0em;
 }
+
+/*noinspection ALL*/
 .ui.ad:first-child {
   margin: 0em;
 }
+
+/*noinspection ALL*/
 .ui.ad:last-child {
   margin: 0em;
 }
+
+/*noinspection ALL*/
 .ui.ad iframe {
   margin: 0em;
   padding: 0em;

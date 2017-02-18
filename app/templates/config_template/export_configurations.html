@@ -5,12 +5,12 @@
     <h1><span class="uk-icon-file"></span> Export configurations for "{{ config_template.name }}"</h1>
     <ul class="uk-subnav uk-subnav-line">
         <li>
-            <a href="{{  url_for("view_config_template", project_id=config_template.project.id, config_template_id=config_template.id) }}" id="_back">
+            <a href="{{  url_for("tools.view_config_template", project_id=config_template.project.id, config_template_id=config_template.id) }}" id="_back">
                 <span class="uk-icon-arrow-left"></span> back
             </a>
         </li>
         <li>
-            <a href="{{ url_for("download_all_config_as_zip", project_id=project.id, config_template_id=config_template.id) }}" id="download_all_configurations">
+            <a href="{{ url_for("tools.download_all_config_as_zip", project_id=project.id, config_template_id=config_template.id) }}" id="download_all_configurations">
                 <span class="uk-icon-download"></span> download all configurations (ZIP-archive)
             </a>
         </li>

@@ -27,6 +27,8 @@
   display: inline-flex;
   color: rgba(0, 0, 0, 0.87);
 }
+
+/*noinspection ALL*/
 .ui.input input {
   margin: 0em;
   max-width: 100%;
@@ -99,6 +101,7 @@
        Loading
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.loading.loading.input > i.icon:before {
   position: absolute;
   content: '';
@@ -110,6 +113,8 @@
   border-radius: 500rem;
   border: 0.2em solid rgba(0, 0, 0, 0.1);
 }
+
+/*noinspection ALL*/
 .ui.loading.loading.input > i.icon:after {
   position: absolute;
   content: '';
@@ -196,6 +201,7 @@
       Transparent
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.transparent.input input {
   border-color: transparent !important;
   background-color: transparent !important;
@@ -207,10 +213,14 @@
 .ui.transparent.icon.input > i.icon {
   width: 1.1em;
 }
+
+/*noinspection ALL*/
 .ui.transparent.icon.input > input {
   padding-left: 0em !important;
   padding-right: 2em !important;
 }
+
+/*noinspection ALL*/
 .ui.transparent[class*="left icon"].input > input {
   padding-left: 2em !important;
   padding-right: 0em !important;
@@ -237,6 +247,7 @@
          Icon
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.icon.input > i.icon {
   cursor: default;
   position: absolute;
@@ -276,6 +287,7 @@
 }
 
 /* Left Icon Input */
+/*noinspection ALL*/
 .ui[class*="left icon"].input > i.icon {
   right: auto;
   left: 1px;
@@ -314,10 +326,13 @@
 }
 
 /* Regular Label on Left */
+/*noinspection ALL*/
 .ui.labeled.input:not([class*="corner labeled"]) .label:first-child {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
+
+/*noinspection ALL*/
 .ui.labeled.input:not([class*="corner labeled"]) .label:first-child + input {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -328,11 +343,14 @@
 }
 
 /* Regular Label on Right */
+/*noinspection ALL*/
 .ui[class*="right labeled"].input input {
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
   border-right-color: transparent !important;
 }
+
+/*noinspection ALL*/
 .ui[class*="right labeled"].input input + .label {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -342,6 +360,7 @@
 }
 
 /* Corner Label */
+/*noinspection ALL*/
 .ui.labeled.input .corner.label {
   top: 1px;
   right: 1px;
@@ -405,16 +424,21 @@
 }
 
 /* Button on Right */
+/*noinspection ALL*/
 .ui.action.input:not([class*="left action"]) > input {
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
   border-right-color: transparent !important;
 }
+
+/*noinspection ALL*/
 .ui.action.input:not([class*="left action"]) > .dropdown:not(:first-child),
 .ui.action.input:not([class*="left action"]) > .button:not(:first-child),
 .ui.action.input:not([class*="left action"]) > .buttons:not(:first-child) > .button {
   border-radius: 0px;
 }
+
+/*noinspection ALL*/
 .ui.action.input:not([class*="left action"]) > .dropdown:last-child,
 .ui.action.input:not([class*="left action"]) > .button:last-child,
 .ui.action.input:not([class*="left action"]) > .buttons:last-child > .button {
@@ -427,16 +451,21 @@
 }
 
 /* Button on Left */
+/*noinspection ALL*/
 .ui[class*="left action"].input > input {
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
   border-left-color: transparent !important;
 }
+
+/*noinspection ALL*/
 .ui[class*="left action"].input > .dropdown,
 .ui[class*="left action"].input > .button,
 .ui[class*="left action"].input > .buttons > .button {
   border-radius: 0px;
 }
+
+/*noinspection ALL*/
 .ui[class*="left action"].input > .dropdown:first-child,
 .ui[class*="left action"].input > .button:first-child,
 .ui[class*="left action"].input > .buttons:first-child > .button {
@@ -467,6 +496,8 @@
   display: -ms-flexbox;
   display: flex;
 }
+
+/*noinspection ALL*/
 .ui.fluid.input > input {
   width: 0px !important;
 }

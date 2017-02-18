@@ -15,6 +15,7 @@
 
 
 /* Sidebar Menu */
+/*noinspection ALL*/
 .ui.sidebar {
   position: fixed;
   top: 0;
@@ -46,12 +47,15 @@
    Direction
 ---------------*/
 
+/*noinspection ALL*/
 .ui.left.sidebar {
   right: auto;
   left: 0px;
   -webkit-transform: translate3d(-100%, 0, 0);
           transform: translate3d(-100%, 0, 0);
 }
+
+/*noinspection ALL*/
 .ui.right.sidebar {
   right: 0px !important;
   left: auto !important;
@@ -63,12 +67,16 @@
   width: 100% !important;
   height: auto !important;
 }
+
+/*noinspection ALL*/
 .ui.top.sidebar {
   top: 0px !important;
   bottom: auto !important;
   -webkit-transform: translate3d(0, -100%, 0);
           transform: translate3d(0, -100%, 0);
 }
+
+/*noinspection ALL*/
 .ui.bottom.sidebar {
   top: auto !important;
   bottom: 0px !important;
@@ -80,6 +88,7 @@
      Pushable
 ---------------*/
 
+/*noinspection ALL*/
 .pushable {
   height: 100%;
   overflow-x: hidden;
@@ -147,6 +156,7 @@ body.pushable > .pusher {
      Dimmer
 ---------------*/
 
+/*noinspection ALL*/
 .pushable > .pusher:after {
   position: fixed;
   top: 0px;
@@ -165,6 +175,7 @@ body.pushable > .pusher {
     Coupling
 ---------------*/
 
+/*noinspection ALL*/
 .ui.sidebar.menu .item {
   border-radius: 0em !important;
 }
@@ -204,10 +215,13 @@ body.pushable > .pusher {
 }
 
 /* Shadow Direction */
+/*noinspection ALL*/
 .ui.left.visible.sidebar,
 .ui.right.visible.sidebar {
   box-shadow: 0px 0px 20px rgba(34, 36, 38, 0.15);
 }
+
+/*noinspection ALL*/
 .ui.top.visible.sidebar,
 .ui.bottom.visible.sidebar {
   box-shadow: 0px 0px 20px rgba(34, 36, 38, 0.15);

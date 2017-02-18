@@ -20,7 +20,8 @@ def verify_appliance_status():
         "celery_worker": False
     }
 
-    # assume that the setup script was running on the server, if the ports are open, TFTP and FTP should be available
+    # assume that the setup script was running on the server,
+    # if the ports are open, TFTP and FTP should be available
     output = subprocess.check_output(["netstat", "-l"]).decode("utf-8")
     if "*:tftp" in output:
         result["tftp"] = True
@@ -28,7 +29,8 @@ def verify_appliance_status():
     if "*:ftp" in output:
         result["ftp"] = True
 
-    # we assume that the redis server is running locally, therefore we can use the CLI to test the connection
+    # we assume that the redis server is running locally,
+    # therefore we can use the CLI to test the connection
     rs = redis.Redis("localhost")
     try:
         if rs.ping():
@@ -52,8 +54,8 @@ def is_valid_ipv4_address(text):
     :param text:
     :return:
     """
-    ipv4_regex = '(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4]' \
-                 '[0-9]|25[0-5])'
+    ipv4_regex = '(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.)' \
+                 '{3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])'
 
     if re.match(ipv4_regex, text) is None:
         return False

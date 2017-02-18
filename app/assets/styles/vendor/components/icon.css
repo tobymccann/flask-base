@@ -23,6 +23,8 @@
   text-decoration: inherit;
   text-transform: none;
 }
+
+/*noinspection ALL*/
 i.icon {
   display: inline-block;
   opacity: 1;
@@ -110,6 +112,7 @@ i.disabled.icon {
         Fitted
 --------------------*/
 
+/*noinspection ALL*/
 i.fitted.icon {
   width: auto;
   margin: 0em;
@@ -135,6 +138,7 @@ i.link.icons:hover {
       Circular
 --------------------*/
 
+/*noinspection ALL*/
 i.circular.icon {
   border-radius: 500em !important;
   line-height: 1 !important;
@@ -182,6 +186,7 @@ i.counterclockwise.rotated.icon {
       Bordered
 --------------------*/
 
+/*noinspection ALL*/
 i.bordered.icon {
   line-height: 1;
   vertical-align: baseline;
@@ -442,6 +447,8 @@ i.icons {
   position: relative;
   line-height: 1;
 }
+
+/*noinspection ALL*/
 i.icons .icon {
   position: absolute;
   top: 50%;

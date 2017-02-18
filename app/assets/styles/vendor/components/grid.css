@@ -13,6 +13,7 @@
             Standard
 *******************************/
 
+/*noinspection ALL*/
 .ui.grid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -77,6 +78,7 @@
         Rows
 --------------------*/
 
+/*noinspection ALL*/
 .ui.grid > .row {
   position: relative;
   display: -webkit-box;
@@ -110,6 +112,8 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+/*noinspection ALL*/
 .ui.grid > .row > .column {
   margin-top: 0em;
   margin-bottom: 0em;
@@ -130,9 +134,12 @@
 
 
 /* Collapse Margin on Consecutive Grid */
+/*noinspection ALL*/
 .ui.grid > .ui.grid:first-child {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.grid > .ui.grid:last-child {
   margin-bottom: 0em;
 }
@@ -171,7 +178,8 @@
 -------------------------*/
 
 @media only screen and (max-width: 767px) {
-  .ui.page.grid {
+    /*noinspection ALL*/
+    .ui.page.grid {
     width: auto;
     padding-left: 0em;
     padding-right: 0em;
@@ -180,7 +188,8 @@
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .ui.page.grid {
+    /*noinspection ALL*/
+    .ui.page.grid {
     width: auto;
     margin-left: 0em;
     margin-right: 0em;
@@ -189,7 +198,8 @@
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .ui.page.grid {
+    /*noinspection ALL*/
+    .ui.page.grid {
     width: auto;
     margin-left: 0em;
     margin-right: 0em;
@@ -198,7 +208,8 @@
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1919px) {
-  .ui.page.grid {
+    /*noinspection ALL*/
+    .ui.page.grid {
     width: auto;
     margin-left: 0em;
     margin-right: 0em;
@@ -207,7 +218,8 @@
   }
 }
 @media only screen and (min-width: 1920px) {
-  .ui.page.grid {
+    /*noinspection ALL*/
+    .ui.page.grid {
     width: auto;
     margin-left: 0em;
     margin-right: 0em;
@@ -1013,13 +1025,18 @@
         Padded
 -----------------------*/
 
+/*noinspection ALL*/
 .ui.padded.grid:not(.vertically):not(.horizontally) {
   margin: 0em !important;
 }
+
+/*noinspection ALL*/
 [class*="horizontally padded"].ui.grid {
   margin-left: 0em !important;
   margin-right: 0em !important;
 }
+
+/*noinspection ALL*/
 [class*="vertically padded"].ui.grid {
   margin-top: 0em !important;
   margin-bottom: 0em !important;
@@ -1040,12 +1057,14 @@
         Divided
 -----------------------*/
 
+/*noinspection ALL*/
 .ui.divided.grid:not([class*="vertically divided"]) > .column:not(.row),
 .ui.divided.grid:not([class*="vertically divided"]) > .row > .column {
   box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
 }
 
 /* Swap from padding to margin on columns to have dividers align */
+/*noinspection ALL*/
 .ui[class*="vertically divided"].grid > .column:not(.row),
 .ui[class*="vertically divided"].grid > .row > .column {
   margin-top: 1rem;
@@ -1053,6 +1072,8 @@
   padding-top: 0rem;
   padding-bottom: 0rem;
 }
+
+/*noinspection ALL*/
 .ui[class*="vertically divided"].grid > .row {
   margin-top: 0em;
   margin-bottom: 0em;
@@ -1065,11 +1086,13 @@
 }
 
 /* No space on top of first row */
+/*noinspection ALL*/
 .ui[class*="vertically divided"].grid > .row:first-child > .column {
   margin-top: 0em;
 }
 
 /* Divided Row */
+/*noinspection ALL*/
 .ui.grid > .divided.row > .column {
   box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
 }
@@ -1081,6 +1104,8 @@
 .ui[class*="vertically divided"].grid > .row {
   position: relative;
 }
+
+/*noinspection ALL*/
 .ui[class*="vertically divided"].grid > .row:before {
   position: absolute;
   content: "";
@@ -1104,6 +1129,7 @@
 }
 
 /* Inverted Divided */
+/*noinspection ALL*/
 .ui.inverted.divided.grid:not([class*="vertically divided"]) > .column:not(.row),
 .ui.inverted.divided.grid:not([class*="vertically divided"]) > .row > .column {
   box-shadow: -1px 0px 0px 0px rgba(255, 255, 255, 0.1);
@@ -1112,6 +1138,8 @@
 .ui.inverted.divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
   box-shadow: none;
 }
+
+/*noinspection ALL*/
 .ui.inverted[class*="vertically divided"].grid > .row:before {
   box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
 }
@@ -1132,17 +1160,22 @@
          Celled
 -----------------------*/
 
+/*noinspection ALL*/
 .ui.celled.grid {
   width: 100%;
   margin: 1em 0em;
   box-shadow: 0px 0px 0px 1px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.celled.grid > .row {
   width: 100% !important;
   margin: 0em;
   padding: 0em;
   box-shadow: 0px -1px 0px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.celled.grid > .column:not(.row),
 .ui.celled.grid > .row > .column {
   box-shadow: -1px 0px 0px 0px #D4D4D5;
@@ -1165,6 +1198,7 @@
 }
 
 /* Internally Celled */
+/*noinspection ALL*/
 .ui[class*="internally celled"].grid {
   box-shadow: none;
   margin: 0em;
@@ -1482,7 +1516,8 @@
   }
   
 /* Divided Reversed */
-  .ui[class*="mobile reversed"].divided.grid:not([class*="vertically divided"]) > .column:first-child,
+    /*noinspection ALL*/
+    .ui[class*="mobile reversed"].divided.grid:not([class*="vertically divided"]) > .column:first-child,
   .ui[class*="mobile reversed"].divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
     box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
   }
@@ -1492,7 +1527,8 @@
   }
   
 /* Vertically Divided Reversed */
-  .ui.grid[class*="vertically divided"][class*="mobile vertically reversed"] > .row:first-child:before {
+    /*noinspection ALL*/
+    .ui.grid[class*="vertically divided"][class*="mobile vertically reversed"] > .row:first-child:before {
     box-shadow: 0px -1px 0px 0px rgba(34, 36, 38, 0.15);
   }
   .ui.grid[class*="vertically divided"][class*="mobile vertically reversed"] > .row:last-child:before {
@@ -1500,7 +1536,8 @@
   }
   
 /* Celled Reversed */
-  .ui[class*="mobile reversed"].celled.grid > .row > .column:first-child {
+    /*noinspection ALL*/
+    .ui[class*="mobile reversed"].celled.grid > .row > .column:first-child {
     box-shadow: -1px 0px 0px 0px #D4D4D5;
   }
   .ui[class*="mobile reversed"].celled.grid > .row > .column:last-child {
@@ -1526,7 +1563,8 @@
   }
   
 /* Divided Reversed */
-  .ui[class*="tablet reversed"].divided.grid:not([class*="vertically divided"]) > .column:first-child,
+    /*noinspection ALL*/
+    .ui[class*="tablet reversed"].divided.grid:not([class*="vertically divided"]) > .column:first-child,
   .ui[class*="tablet reversed"].divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
     box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
   }
@@ -1536,7 +1574,8 @@
   }
   
 /* Vertically Divided Reversed */
-  .ui.grid[class*="vertically divided"][class*="tablet vertically reversed"] > .row:first-child:before {
+    /*noinspection ALL*/
+    .ui.grid[class*="vertically divided"][class*="tablet vertically reversed"] > .row:first-child:before {
     box-shadow: 0px -1px 0px 0px rgba(34, 36, 38, 0.15);
   }
   .ui.grid[class*="vertically divided"][class*="tablet vertically reversed"] > .row:last-child:before {
@@ -1544,7 +1583,8 @@
   }
   
 /* Celled Reversed */
-  .ui[class*="tablet reversed"].celled.grid > .row > .column:first-child {
+    /*noinspection ALL*/
+    .ui[class*="tablet reversed"].celled.grid > .row > .column:first-child {
     box-shadow: -1px 0px 0px 0px #D4D4D5;
   }
   .ui[class*="tablet reversed"].celled.grid > .row > .column:last-child {
@@ -1570,7 +1610,8 @@
   }
   
 /* Divided Reversed */
-  .ui[class*="computer reversed"].divided.grid:not([class*="vertically divided"]) > .column:first-child,
+    /*noinspection ALL*/
+    .ui[class*="computer reversed"].divided.grid:not([class*="vertically divided"]) > .column:first-child,
   .ui[class*="computer reversed"].divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
     box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
   }
@@ -1580,7 +1621,8 @@
   }
   
 /* Vertically Divided Reversed */
-  .ui.grid[class*="vertically divided"][class*="computer vertically reversed"] > .row:first-child:before {
+    /*noinspection ALL*/
+    .ui.grid[class*="vertically divided"][class*="computer vertically reversed"] > .row:first-child:before {
     box-shadow: 0px -1px 0px 0px rgba(34, 36, 38, 0.15);
   }
   .ui.grid[class*="vertically divided"][class*="computer vertically reversed"] > .row:last-child:before {
@@ -1588,7 +1630,8 @@
   }
   
 /* Celled Reversed */
-  .ui[class*="computer reversed"].celled.grid > .row > .column:first-child {
+    /*noinspection ALL*/
+    .ui[class*="computer reversed"].celled.grid > .row > .column:first-child {
     box-shadow: -1px 0px 0px 0px #D4D4D5;
   }
   .ui[class*="computer reversed"].celled.grid > .row > .column:last-child {
@@ -1606,12 +1649,16 @@
   .ui.doubling.grid {
     width: auto;
   }
-  .ui.grid > .doubling.row,
+
+    /*noinspection ALL*/
+    .ui.grid > .doubling.row,
   .ui.doubling.grid > .row {
     margin: 0em !important;
     padding: 0em !important;
   }
-  .ui.grid > .doubling.row > .column,
+
+    /*noinspection ALL*/
+    .ui.grid > .doubling.row > .column,
   .ui.doubling.grid > .row > .column {
     display: inline-block !important;
     padding-top: 1rem !important;
@@ -1698,12 +1745,15 @@
 
 /* Mobile Only */
 @media only screen and (max-width: 767px) {
-  .ui.grid > .doubling.row,
+    /*noinspection ALL*/
+    .ui.grid > .doubling.row,
   .ui.doubling.grid > .row {
     margin: 0em !important;
     padding: 0em !important;
   }
-  .ui.grid > .doubling.row > .column,
+
+    /*noinspection ALL*/
+    .ui.grid > .doubling.row > .column,
   .ui.doubling.grid > .row > .column {
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
@@ -1792,12 +1842,15 @@
 --------------------*/
 
 @media only screen and (max-width: 767px) {
-  .ui.stackable.grid {
+    /*noinspection ALL*/
+    .ui.stackable.grid {
     width: auto;
     margin-left: 0em !important;
     margin-right: 0em !important;
   }
-  .ui.stackable.grid > .row > .wide.column,
+
+    /*noinspection ALL*/
+    .ui.stackable.grid > .row > .wide.column,
   .ui.stackable.grid > .wide.column,
   .ui.stackable.grid > .column.grid > .column,
   .ui.stackable.grid > .column.row > .column,
@@ -1809,13 +1862,16 @@
     box-shadow: none !important;
     padding: 1rem 1rem !important;
   }
-  .ui.stackable.grid:not(.vertically) > .row {
+
+    /*noinspection ALL*/
+    .ui.stackable.grid:not(.vertically) > .row {
     margin: 0em;
     padding: 0em;
   }
   
 /* Coupling */
-  .ui.container > .ui.stackable.grid > .column,
+    /*noinspection ALL*/
+    .ui.container > .ui.stackable.grid > .column,
   .ui.container > .ui.stackable.grid > .row > .column {
     padding-left: 0em !important;
     padding-right: 0em !important;
@@ -1853,7 +1909,9 @@
   .ui.stackable.celled.grid > .row {
     box-shadow: none !important;
   }
-  .ui.stackable.divided:not(.vertically).grid > .column:not(.row),
+
+    /*noinspection ALL*/
+    .ui.stackable.divided:not(.vertically).grid > .column:not(.row),
   .ui.stackable.divided:not(.vertically).grid > .row > .column {
     padding-left: 0em !important;
     padding-right: 0em !important;

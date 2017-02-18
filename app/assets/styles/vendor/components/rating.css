@@ -20,11 +20,14 @@
   white-space: nowrap;
   vertical-align: baseline;
 }
+
+/*noinspection ALL*/
 .ui.rating:last-child {
   margin-right: 0em;
 }
 
 /* Icon */
+/*noinspection ALL*/
 .ui.rating .icon {
   padding: 0em;
   margin: 0em;
@@ -86,6 +89,7 @@
 }
 
 /* Active Star */
+/*noinspection ALL*/
 .ui.star.rating .active.icon {
   background: transparent !important;
   color: #FFE623 !important;
@@ -93,6 +97,7 @@
 }
 
 /* Selected Star */
+/*noinspection ALL*/
 .ui.star.rating .icon.selected,
 .ui.star.rating .icon.selected.active {
   background: transparent !important;
@@ -113,6 +118,7 @@
 }
 
 /* Active Heart */
+/*noinspection ALL*/
 .ui.heart.rating .active.icon {
   background: transparent !important;
   color: #FF6D75 !important;
@@ -120,6 +126,7 @@
 }
 
 /* Selected Heart */
+/*noinspection ALL*/
 .ui.heart.rating .icon.selected,
 .ui.heart.rating .icon.selected.active {
   background: transparent !important;

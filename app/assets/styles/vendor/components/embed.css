@@ -13,6 +13,7 @@
             Types
 *******************************/
 
+/*noinspection ALL*/
 .ui.embed {
   position: relative;
   max-width: 100%;
@@ -26,6 +27,7 @@
   Embedded Content
 ------------------*/
 
+/*noinspection ALL*/
 .ui.embed iframe,
 .ui.embed embed,
 .ui.embed object {
@@ -51,6 +53,7 @@
    Placeholder
 ---------------*/
 
+/*noinspection ALL*/
 .ui.embed > .placeholder {
   position: absolute;
   cursor: pointer;
@@ -66,6 +69,7 @@
       Icon
 ---------------*/
 
+/*noinspection ALL*/
 .ui.embed > .icon {
   cursor: pointer;
   position: absolute;
@@ -75,6 +79,8 @@
   height: 100%;
   z-index: 2;
 }
+
+/*noinspection ALL*/
 .ui.embed > .icon:after {
   position: absolute;
   top: 0%;
@@ -89,6 +95,8 @@
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
 }
+
+/*noinspection ALL*/
 .ui.embed > .icon:before {
   position: absolute;
   top: 50%;

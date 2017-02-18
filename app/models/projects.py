@@ -5,7 +5,6 @@ from slugify import slugify
 from .. import db
 
 
-
 class Project(db.Model):
     """
     Project

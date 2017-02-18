@@ -28,6 +28,8 @@
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
+
+/*noinspection ALL*/
 .ui.shape .side {
   opacity: 1;
   width: 100%;
@@ -48,6 +50,7 @@
              Types
 *******************************/
 
+/*noinspection ALL*/
 .ui.cube.shape .side {
   min-width: 15em;
   height: 15em;
@@ -107,6 +110,7 @@
     Animating
 ---------------*/
 
+/*noinspection ALL*/
 .ui.shape .animating.side {
   position: absolute;
   top: 0px;

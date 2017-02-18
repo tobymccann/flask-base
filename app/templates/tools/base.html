@@ -1,103 +1,89 @@
-{% extends 'base_no_sidebar.html' %}
+{% extends 'layouts/base_no_sidebar.html' %}
 
 {% block sidebar %}
-<div class="uk-width-medium-1-4 uk-hidden-small" style="margin-top:50px">
-    <!-- Menu -->
-    <div class="uk-panel uk-panel-box" data-uk-sticky="{top:60}">
-        <ul class="uk-nav uk-nav-side uk-nav-parent-icon" data-uk-scrollspy-nav="{closest:'li', smoothscroll:true}" data-uk-nav>
-            <li><a href="{{ url_for("home") }}"><span class="uk-icon-home"></span> Homepage</a></li>
-
-            <li class="uk-nav-divider"></li>
-            <li class="uk-nav-header">Projects</li>
-            {% if all_project_data|length != 0 %}
-                {% for p in all_project_data %}
-                    {% if project %}
-                        {% if project.name == p.name %}
-                            <li class="uk-parent uk-active">
-                        {% else %}
-                            <li class="uk-parent">
-                        {% endif %}
-                    {% else %}
-                    <li class="uk-parent">
-                    {% endif %}
-                        <a href="{{ url_for("view_project", project_id=p.id) }}">
-                            <span class="uk-icon-folder"></span>
-                            {{ p.name }}
-                        </a>
-                        <ul class="uk-nav-sub">
-                            <ul>
-                                <li>
-                                    <a href="{{  url_for("add_config_template", project_id=p.id) }}">
-                                        <span class="uk-icon-plus"></span>
-                                        add a Config Template
-                                    </a>
-                                </li>
-                                <li class="uk-nav-divider"></li>
-                                {% if p.config_templates|length != 0 %}
-                                    {% for cfg in p.config_templates %}
-                                        <li>
-                                            <a href="{{ url_for("view_config_template", project_id=p.id, config_template_id=cfg.id) }}">
-                                                <span class="uk-icon-file"></span>
-                                                {{ cfg.name }}
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                {% else %}
-                                    <li>(no templates defined)</li>
-                                {% endif %}
-                                <li></li>
-                            </ul>
-                        </ul>
-                    </li>
-                {% endfor %}
-                <li class="uk-nav-divider"></li>
-                <li class="">
-                    <a href="{{ url_for("add_project") }}">
-                        <span class="uk-icon-folder"></span> Add a new Project
-                    </a>
-                </li>
+<div class="ui inverted left vertical accordion menu">
+    <a class="item" href="{{ url_for("main.index") }}">
+        <i class="home icon"></i>
+        Home
+    </a>
+    <div class="divider"></div>
+    <div class="header item">Projects</div>
+    {% if all_project_data|length != 0 %}
+        {% for p in all_project_data %}
+            <div class="item">
+            {% if project %}
+                {% if project.name == p.name %}
+                    <div class="active title">
+                {% else %}
+                    <div class="title">
+                {% endif %}
             {% else %}
-                <li class="">
-                    <a href="{{ url_for("add_project") }}" class="uk-text-danger">
-                        <span class="uk-icon-folder"></span> Add your first Project
-                    </a>
-                </li>
+                <div class="title">
             {% endif %}
-            <li class="uk-nav-divider"></li>
-                <li class="">
-                    <a href="{{ url_for("appliance_status") }}">
-                        <span class="uk-icon-dashboard"></span> Appliance Status
+                <a href="{{ url_for("projects.view_project", project_id=p.id) }}">
+                    <i class="dropdown icon"></i>
+                    {{ p.name }}
+                </a>
+                    <a class="content" href="{{ url_for("tools.add_config_template", project_id=p.id) }}">
+                        <i class="plus icon"></i>
+                        add a Config Template
                     </a>
-                </li>
-                <li class="">
-                    <a href="{{ url_for("shell") }}">
-                        <span class="uk-icon-exchange"></span> Shell in a Box
-                    </a>
-                </li>
-            <li class="uk-nav-divider"></li>
-            <li class="">
-                <a href="{{ url_for("how_to_use") }}">
-                    <i class="uk-icon-info-circle uk-margin-small-right"></i> How to use
+                    {% if p.config_templates|length != 0 %}
+                        <div class="accordion">
+                                <div class="item">
+                        {% for cfg in p.config_templates %}
+                            <a class="title" href="{{ url_for("tools.view_config_template", project_id=p.id, config_template_id=cfg.id) }}">
+                                <i class="file icon"></i>
+                                {{ cfg.name }}
+                            </a>
+                        {% endfor %}
+                                </div>
+                        </div>
+                    {% else %}
+                        <div class="content">(no templates defined)</div>
+                    {% endif %}
+                    <div class="content"></div>
+                </div>
+            </div>
+        {% endfor %}
+            <div class="divider"></div>
+            <div class="item">
+                <a href="{{ url_for("projects.add_project") }}">
+                    <i class="folder icon"></i> Add a new Project
                 </a>
-            </li>
-            <li class="">
-                <a href="{{ url_for("template_syntax") }}">
-                    <i class="uk-icon-question-circle uk-margin-small-right"></i> Template Syntax
+            </div>
+        {% else %}
+            <div class="item">
+                <a href="{{ url_for("projects.add_project") }}" class="uk-text-danger">
+                    <i class="folder icon"></i> Add your first Project
                 </a>
-            </li>
-            <li class="">
-                <a href="https://github.com/hoelsner/network-config-generator" target="_blank">
-                    <i class="uk-icon-github uk-margin-small-right"></i> Github Repository
-                </a>
-            </li>
-        </ul>
+            </div>
+        {% endif %}
+    <div class="divider"></div>
+    <a class="item" href="{{ url_for("tools.appliance_status_json") }}">
+        <i class="dashboard icon"></i>
+        Appliance Status
+    </a>
+    <div class="divider"></div>
+    <a class="item" href="{{ url_for("tools.how_to_use") }}">
+        <i class="help icon"></i>
+        How to use
+    </a>
+    <a class="item" href="{{ url_for("tools.template_syntax") }}">
+        <i class="info icon"></i>
+        Template Syntax
+    </a>
+    <a class="item" href="https://github.com/tobymccann/network-config-generator" target="_blank">
+        <i class="github icon"></i>
+        Github Repo
+    </a>
+</div>
+
+{% endblock %}
+<div class="pusher">
+    <div class="ui container">
+        {% block full_size_content %}
+        {% block content %}{% endblock %}
+        {% endblock %}
     </div>
 </div>
-{% endblock %}
-
-{% block full_size_content %}
-    <div class="uk-width-medium-3-4" id="main_content" style="margin-top:50px">
-        <!-- Content -->
-        {% block content %}{% endblock %}
-    </div>
-{% endblock %}

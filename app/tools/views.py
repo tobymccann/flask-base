@@ -1,55 +1,26 @@
+import os
 from flask import abort, flash, redirect, render_template, url_for, request, jsonify, make_response, send_file
-from flask_login import current_user, login_required
-
-from . import tools
-from .. import db
-from ..decorators import admin_required
-from ..models import Role, User, EditableHTML
-
-"""
-views for the Config Template data object
-"""
+from flask_login import login_required
 import csv
 import logging
 import io
-from sqlalchemy.exc import IntegrityError
-
-from ..models import ConfigTemplate, Project, TemplateValueSet
-from .forms import ConfigTemplateForm, EditConfigTemplateValuesForm
-from ..utils.appliance import get_local_ip_addresses, verify_appliance_status
-from ..utils.export import get_appliance_ftp_password
-from ..tasks import update_local_ftp_configurations, update_local_tftp_configurations
-
-"""
-views for the resulting configuration
-"""
-import zipfile
 from io import BytesIO
 import time
-
-"""
-task queue views for the web service (mainly JSON endpoints for AJAX functions)
-"""
+import zipfile
+from .. import db, config
+from ..models import ConfigTemplate, Project, TemplateValueSet, TemplateVariable
+from sqlalchemy.exc import IntegrityError
+from .forms import ConfigTemplateForm, EditConfigTemplateValuesForm, TemplateValueSetForm, TemplateVariableForm
+from ..utils.appliance import get_local_ip_addresses, verify_appliance_status
+from ..utils.export import get_appliance_ftp_password
 from .. import celery
-
-"""
-views for the Template Value Set data object
-"""
-from .forms import TemplateValueSetForm
-
-"""
-views for the Template Variable data object
-"""
-from ..models import ConfigTemplate, TemplateVariable
-from .forms import TemplateVariableForm
-
+from . import tools
 
 
 logger = logging.getLogger()
 
 
-@tools.route('/tools')
-@login_required
+@tools.route('/')
 def index():
     """Tool dashboard page."""
     return render_template('tools/base.html')
@@ -223,7 +194,8 @@ def edit_all_config_template_values(project_id, config_template_id):
                     flash("Invalid Hostname for Template Value Set: '%s'" % csv_lines[counter], "error")
 
                 elif line["hostname"] == "":
-                    flash("No Hostname defined for Template Value Set: '%s'" % form.csv_content.data.splitlines()[counter], "error")
+                    flash("No Hostname defined for Template Value Set: '{0}'"
+                          .format(form.csv_content.data.splitlines()[counter]), "error")
 
                 else:
                     # try to access an existing TemplateValueSet
@@ -234,7 +206,8 @@ def edit_all_config_template_values(project_id, config_template_id):
                     if not tvs:
                         # element not found, create and add a flush message
                         tvs = TemplateValueSet(hostname=line["hostname"], config_template=config_template)
-                        flash("Create new Template Value Set for hostname <strong>%s</strong>" % line["hostname"], "success")
+                        flash("Create new Template Value Set for hostname <strong>{0}</strong>"
+                              .format(line["hostname"]), "success")
 
                     # update variable values
                     for var in variable_list:
@@ -287,7 +260,8 @@ def delete_config_template(project_id, config_template_id):
             db.session.commit()
 
         except Exception:
-            msg = "Config Template <strong>%s</strong> was not deleted (unknown error, see log for details)" % config_template.name
+            msg = "Config Template <strong>{0}</strong> was not deleted (unknown error, see log for details)".format(
+                config_template.name)
             flash(msg, "error")
             logger.error(msg, exc_info=True)
             db.session.rollback()
@@ -322,6 +296,7 @@ def export_configurations(project_id, config_template_id):
         ip_addresses=get_local_ip_addresses(),
         appliance_status=verify_appliance_status()
     )
+
 
 @tools.route("/projects/template/<int:config_template_id>/valueset/<int:template_value_set_id>/config")
 def view_config(config_template_id, template_value_set_id):
@@ -440,8 +415,8 @@ def list_ftp_directory():
     """
     directory_list_html = ""
 
-    for root, dirs, files in os.walk(app.config["FTP_DIRECTORY"]):
-        directory_list_html += "<p>%s</p>\n<ul>\n" % root[len(app.config["FTP_DIRECTORY"]):]
+    for root, dirs, files in os.walk(config["FTP_DIRECTORY"]):
+        directory_list_html += "<p>%s</p>\n<ul>\n" % root[len(config["FTP_DIRECTORY"]):]
         for file in files:
             directory_list_html += "<li>%s</li>\n" % file
         directory_list_html += "</ul>\n"
@@ -458,13 +433,14 @@ def list_tftp_directory():
     """
     directory_list_html = ""
 
-    for root, dirs, files in os.walk(app.config["TFTP_DIRECTORY"]):
-        directory_list_html += "<p>%s</p>\n<ul>\n" % root[len(app.config["TFTP_DIRECTORY"]):]
+    for root, dirs, files in os.walk(config["TFTP_DIRECTORY"]):
+        directory_list_html += "<p>%s</p>\n<ul>\n" % root[len(config["TFTP_DIRECTORY"]):]
         for file in files:
             directory_list_html += "<li>%s</li>\n" % file
         directory_list_html += "</ul>\n"
 
     return "<html><body>%s</body></html>" % directory_list_html
+
 
 @tools.route('/task/<task_id>')
 def task_status_json(task_id):
@@ -498,6 +474,7 @@ def task_status_json(task_id):
     # update the response with the result of the task
     response["data"] = task.info
     return jsonify(response)
+
 
 @tools.route("/projects/template/<int:config_template_id>/valueset/<int:template_value_set_id>/")
 def view_template_value_set(config_template_id, template_value_set_id):
@@ -670,8 +647,9 @@ def delete_template_value_set(config_template_id, template_value_set_id):
         project=config_template.project
     )
 
+
 @tools.route("/projects/template/<int:config_template_id>/variable/<int:template_variable_id>/edit", methods=["GET",
-                                                                                                             "POST"])
+                                                                                                              "POST"])
 def edit_template_variable(config_template_id, template_variable_id):
     """edit a Template Variable
 
@@ -733,23 +711,3 @@ def edit_template_variable(config_template_id, template_variable_id):
         project=config_template.project,
         form=form
     )
-
-@tools.route('/_update_editor_contents', methods=['POST'])
-@login_required
-@admin_required
-def update_editor_contents():
-    """Update the contents of an editor."""
-
-    edit_data = request.form.get('edit_data')
-    editor_name = request.form.get('editor_name')
-
-    editor_contents = EditableHTML.query.filter_by(
-        editor_name=editor_name).first()
-    if editor_contents is None:
-        editor_contents = EditableHTML(editor_name=editor_name)
-    editor_contents.value = edit_data
-
-    db.session.add(editor_contents)
-    db.session.commit()
-
-    return 'OK', 200

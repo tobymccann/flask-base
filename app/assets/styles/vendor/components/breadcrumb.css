@@ -13,15 +13,20 @@
            Breadcrumb
 *******************************/
 
+/*noinspection ALL*/
 .ui.breadcrumb {
   line-height: 1;
   display: inline-block;
   margin: 0em 0em;
   vertical-align: middle;
 }
+
+/*noinspection ALL*/
 .ui.breadcrumb:first-child {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.breadcrumb:last-child {
   margin-bottom: 0em;
 }
@@ -33,6 +38,7 @@
 
 
 /* Divider */
+/*noinspection ALL*/
 .ui.breadcrumb .divider {
   display: inline-block;
   opacity: 0.7;
@@ -60,6 +66,8 @@
 .ui.breadcrumb a.section {
   cursor: pointer;
 }
+
+/*noinspection ALL*/
 .ui.breadcrumb .section {
   display: inline-block;
   margin: 0em;

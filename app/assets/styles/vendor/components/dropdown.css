@@ -34,6 +34,7 @@
       Menu
 ---------------*/
 
+/*noinspection ALL*/
 .ui.dropdown .menu {
   cursor: auto;
   position: absolute;
@@ -74,12 +75,15 @@
  Dropdown Icon
 ---------------*/
 
+/*noinspection ALL*/
 .ui.dropdown > .dropdown.icon {
   position: relative;
   width: auto;
   font-size: 0.85714286em;
   margin: 0em 0em 0em 1em;
 }
+
+/*noinspection ALL*/
 .ui.dropdown .menu > .item .dropdown.icon {
   width: auto;
   float: right;
@@ -120,6 +124,8 @@
   box-shadow: none;
   -webkit-touch-callout: none;
 }
+
+/*noinspection ALL*/
 .ui.dropdown .menu > .item:first-child {
   border-top-width: 0px;
 }
@@ -128,18 +134,23 @@
   Floated Content
 ---------------*/
 
+/*noinspection ALL*/
 .ui.dropdown > .text > [class*="right floated"],
 .ui.dropdown .menu .item > [class*="right floated"] {
   float: right !important;
   margin-right: 0em !important;
   margin-left: 1em !important;
 }
+
+/*noinspection ALL*/
 .ui.dropdown > .text > [class*="left floated"],
 .ui.dropdown .menu .item > [class*="left floated"] {
   float: left !important;
   margin-left: 0em !important;
   margin-right: 1em !important;
 }
+
+/*noinspection ALL*/
 .ui.dropdown .menu .item > .icon.floated,
 .ui.dropdown .menu .item > .flag.floated,
 .ui.dropdown .menu .item > .image.floated,
@@ -151,6 +162,7 @@
   Menu Divider
 ---------------*/
 
+/*noinspection ALL*/
 .ui.dropdown .menu > .header {
   margin: 1rem 0rem 0.75rem;
   padding: 0em 1.14285714rem;
@@ -159,6 +171,8 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+
+/*noinspection ALL*/
 .ui.dropdown .menu > .divider {
   border-top: 1px solid rgba(34, 36, 38, 0.1);
   height: 0em;
@@ -172,6 +186,8 @@
   margin: 1.14285714rem 0.78571429rem;
   min-width: 10rem;
 }
+
+/*noinspection ALL*/
 .ui.dropdown .menu > .header + .input {
   margin-top: 0em;
 }
@@ -189,6 +205,7 @@
   Item Description
 -------------------*/
 
+/*noinspection ALL*/
 .ui.dropdown > .text > .description,
 .ui.dropdown .menu > .item > .description {
   float: right;
@@ -212,6 +229,7 @@
     Sub Menu
 ---------------*/
 
+/*noinspection ALL*/
 .ui.dropdown .menu .menu {
   top: 0% !important;
   left: 100% !important;
@@ -232,6 +250,7 @@
 
 
 /* Icons / Flags / Labels / Image */
+/*noinspection ALL*/
 .ui.dropdown > .text > .icon,
 .ui.dropdown > .text > .label,
 .ui.dropdown > .text > .flag,
@@ -239,6 +258,8 @@
 .ui.dropdown > .text > .image {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.dropdown .menu > .item > .icon,
 .ui.dropdown .menu > .item > .label,
 .ui.dropdown .menu > .item > .flag,
@@ -246,6 +267,8 @@
 .ui.dropdown .menu > .item > img {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.dropdown > .text > .icon,
 .ui.dropdown > .text > .label,
 .ui.dropdown > .text > .flag,
@@ -298,6 +321,7 @@
 }
 
 /* Automatically float dropdown menu right on last menu item */
+/*noinspection ALL*/
 .ui.menu .right.menu .dropdown:last-child .menu,
 .ui.menu .right.dropdown.item .menu,
 .ui.buttons > .ui.dropdown:last-child .menu {
@@ -321,6 +345,7 @@
 
 
 /* No Margin On Icon Button */
+/*noinspection ALL*/
 .ui.dropdown.icon.button > .dropdown.icon {
   margin: 0em;
 }
@@ -389,11 +414,13 @@ select.ui.dropdown {
 }
 
 /* Compact */
+/*noinspection ALL*/
 .ui.compact.selection.dropdown {
   min-width: 0px;
 }
 
 /*  Selection Menu */
+/*noinspection ALL*/
 .ui.selection.dropdown .menu {
   overflow-x: hidden;
   overflow-y: auto;
@@ -464,10 +491,13 @@ select.ui.dropdown {
 }
 
 /* Active */
+/*noinspection ALL*/
 .ui.selection.active.dropdown {
   border-color: #96C8DA;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
 }
+
+/*noinspection ALL*/
 .ui.selection.active.dropdown .menu {
   border-color: #96C8DA;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
@@ -478,6 +508,8 @@ select.ui.dropdown {
   border-color: #96C8DA;
   box-shadow: none;
 }
+
+/*noinspection ALL*/
 .ui.selection.dropdown:focus .menu {
   border-color: #96C8DA;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
@@ -490,10 +522,13 @@ select.ui.dropdown {
 }
 
 /* Visible Hover */
+/*noinspection ALL*/
 .ui.selection.active.dropdown:hover {
   border-color: #96C8DA;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
 }
+
+/*noinspection ALL*/
 .ui.selection.active.dropdown:hover .menu {
   border-color: #96C8DA;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
@@ -507,6 +542,7 @@ select.ui.dropdown {
 }
 
 /* Connecting Border */
+/*noinspection ALL*/
 .ui.active.selection.dropdown {
   border-bottom-left-radius: 0em !important;
   border-bottom-right-radius: 0em !important;
@@ -533,6 +569,7 @@ select.ui.dropdown {
 }
 
 /* Search Dropdown */
+/*noinspection ALL*/
 .ui.search.dropdown > input.search {
   background: none transparent !important;
   border: none !important;
@@ -640,6 +677,7 @@ select.ui.dropdown {
 }
 
 /* Selection Label */
+/*noinspection ALL*/
 .ui.multiple.dropdown > .label {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -661,6 +699,7 @@ select.ui.dropdown {
 }
 
 /* Text */
+/*noinspection ALL*/
 .ui.multiple.dropdown > .text {
   position: static;
   padding: 0;
@@ -681,6 +720,7 @@ select.ui.dropdown {
 
 
 /* Prompt Text */
+/*noinspection ALL*/
 .ui.multiple.search.dropdown > .text {
   display: inline-block;
   position: absolute;
@@ -695,6 +735,7 @@ select.ui.dropdown {
 }
 
 /* Search */
+/*noinspection ALL*/
 .ui.multiple.search.dropdown > input.search {
   position: static;
   padding: 0;
@@ -713,6 +754,8 @@ select.ui.dropdown {
   display: inline-block;
   color: inherit;
 }
+
+/*noinspection ALL*/
 .ui.inline.dropdown .dropdown.icon {
   margin: 0em 0.5em 0em 0.21428571em;
   vertical-align: baseline;
@@ -766,6 +809,8 @@ select.ui.dropdown {
   height: 1em !important;
   padding: 1.14285714em 1.07142857em !important;
 }
+
+/*noinspection ALL*/
 .ui.loading.dropdown > i.icon:before {
   position: absolute;
   content: '';
@@ -777,6 +822,8 @@ select.ui.dropdown {
   border-radius: 500rem;
   border: 0.2em solid rgba(0, 0, 0, 0.1);
 }
+
+/*noinspection ALL*/
 .ui.loading.dropdown > i.icon:after {
   position: absolute;
   content: '';
@@ -938,6 +985,7 @@ select.ui.dropdown {
 
 
 /* Flyout Direction */
+/*noinspection ALL*/
 .ui.dropdown .menu {
   left: 0px;
 }
@@ -957,12 +1005,16 @@ select.ui.dropdown {
   right: 100% !important;
   border-radius: 0.28571429rem !important;
 }
+
+/*noinspection ALL*/
 .ui.dropdown .item .left.dropdown.icon,
 .ui.dropdown .left.menu .item .dropdown.icon {
   width: auto;
   float: left;
   margin: 0em 0.78571429rem 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.dropdown .item .left.dropdown.icon,
 .ui.dropdown .left.menu .item .dropdown.icon {
   width: auto;
@@ -980,6 +1032,7 @@ select.ui.dropdown {
 
 
 /* Upward Main Menu */
+/*noinspection ALL*/
 .ui.upward.dropdown > .menu {
   top: auto;
   bottom: 100%;
@@ -994,39 +1047,50 @@ select.ui.dropdown {
 }
 
 /* Active Upward */
+/*noinspection ALL*/
 .ui.simple.upward.active.dropdown,
 .ui.simple.upward.dropdown:hover {
   border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;
 }
+
+/*noinspection ALL*/
 .ui.upward.dropdown.button:not(.pointing):not(.floating).active {
   border-radius: 0.28571429rem 0.28571429rem 0em 0em;
 }
 
 /* Selection */
+/*noinspection ALL*/
 .ui.upward.selection.dropdown .menu {
   border-top-width: 1px !important;
   border-bottom-width: 0px !important;
   box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);
 }
+
+/*noinspection ALL*/
 .ui.upward.selection.dropdown:hover {
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);
 }
 
 /* Active Upward */
+/*noinspection ALL*/
 .ui.active.upward.selection.dropdown {
   border-radius: 0em 0em 0.28571429rem 0.28571429rem !important;
 }
 
 /* Visible Upward */
+/*noinspection ALL*/
 .ui.upward.selection.dropdown.visible {
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);
   border-radius: 0em 0em 0.28571429rem 0.28571429rem !important;
 }
 
 /* Visible Hover Upward */
+/*noinspection ALL*/
 .ui.upward.active.selection.dropdown:hover {
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);
 }
+
+/*noinspection ALL*/
 .ui.upward.active.selection.dropdown:hover .menu {
   box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);
 }
@@ -1129,6 +1193,8 @@ select.ui.dropdown {
   -webkit-transition: opacity 0.1s ease;
   transition: opacity 0.1s ease;
 }
+
+/*noinspection ALL*/
 .ui.simple.active.dropdown,
 .ui.simple.dropdown:hover {
   border-bottom-left-radius: 0em !important;
@@ -1142,6 +1208,8 @@ select.ui.dropdown {
   top: 100% !important;
   opacity: 1;
 }
+
+/*noinspection ALL*/
 .ui.simple.dropdown > .menu > .item:active > .menu,
 .ui.simple.dropdown:hover > .menu > .item:hover > .menu {
   overflow: visible;
@@ -1151,6 +1219,8 @@ select.ui.dropdown {
   left: 100% !important;
   opacity: 1;
 }
+
+/*noinspection ALL*/
 .ui.simple.disabled.dropdown:hover .menu {
   display: none;
   height: 0px;
@@ -1167,6 +1237,7 @@ select.ui.dropdown {
       Fluid
 ---------------*/
 
+/*noinspection ALL*/
 .ui.fluid.dropdown {
   display: block;
   width: 100%;
@@ -1180,6 +1251,7 @@ select.ui.dropdown {
     Floating
 ---------------*/
 
+/*noinspection ALL*/
 .ui.floating.dropdown .menu {
   left: 0;
   right: auto;
@@ -1200,6 +1272,8 @@ select.ui.dropdown {
   margin-top: 0.78571429rem;
   border-radius: 0.28571429rem;
 }
+
+/*noinspection ALL*/
 .ui.pointing.dropdown > .menu:after {
   display: block;
   position: absolute;
@@ -1214,6 +1288,8 @@ select.ui.dropdown {
   background: #FFFFFF;
   z-index: 2;
 }
+
+/*noinspection ALL*/
 .ui.pointing.dropdown > .menu:after {
   top: -0.25em;
   left: 50%;
@@ -1221,6 +1297,7 @@ select.ui.dropdown {
 }
 
 /* Top Left Pointing */
+/*noinspection ALL*/
 .ui.top.left.pointing.dropdown > .menu {
   top: 100%;
   bottom: auto;
@@ -1228,6 +1305,8 @@ select.ui.dropdown {
   right: auto;
   margin: 1em 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.top.left.pointing.dropdown > .menu {
   top: 100%;
   bottom: auto;
@@ -1235,6 +1314,8 @@ select.ui.dropdown {
   right: auto;
   margin: 1em 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.top.left.pointing.dropdown > .menu:after {
   top: -0.25em;
   left: 1em;
@@ -1245,6 +1326,7 @@ select.ui.dropdown {
 }
 
 /* Top Right  Pointing */
+/*noinspection ALL*/
 .ui.top.right.pointing.dropdown > .menu {
   top: 100%;
   bottom: auto;
@@ -1252,6 +1334,8 @@ select.ui.dropdown {
   left: auto;
   margin: 1em 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.top.right.pointing.dropdown > .menu:after {
   top: -0.25em;
   left: auto;
@@ -1262,12 +1346,15 @@ select.ui.dropdown {
 }
 
 /* Left Pointing */
+/*noinspection ALL*/
 .ui.left.pointing.dropdown > .menu {
   top: 0%;
   left: 100%;
   right: auto;
   margin: 0em 0em 0em 1em;
 }
+
+/*noinspection ALL*/
 .ui.left.pointing.dropdown > .menu:after {
   top: 1em;
   left: -0.25em;
@@ -1277,12 +1364,15 @@ select.ui.dropdown {
 }
 
 /* Right Pointing */
+/*noinspection ALL*/
 .ui.right.pointing.dropdown > .menu {
   top: 0%;
   left: auto;
   right: 100%;
   margin: 0em 1em 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.right.pointing.dropdown > .menu:after {
   top: 1em;
   left: auto;
@@ -1293,6 +1383,7 @@ select.ui.dropdown {
 }
 
 /* Bottom Pointing */
+/*noinspection ALL*/
 .ui.bottom.pointing.dropdown > .menu {
   top: auto;
   bottom: 100%;
@@ -1300,6 +1391,8 @@ select.ui.dropdown {
   right: auto;
   margin: 0em 0em 1em;
 }
+
+/*noinspection ALL*/
 .ui.bottom.pointing.dropdown > .menu:after {
   top: auto;
   bottom: -0.25em;
@@ -1310,12 +1403,14 @@ select.ui.dropdown {
 }
 
 /* Reverse Sub-Menu Direction */
+/*noinspection ALL*/
 .ui.bottom.pointing.dropdown > .menu .menu {
   top: auto !important;
   bottom: 0px !important;
 }
 
 /* Bottom Left */
+/*noinspection ALL*/
 .ui.bottom.left.pointing.dropdown > .menu {
   left: 0%;
   right: auto;
@@ -1326,6 +1421,7 @@ select.ui.dropdown {
 }
 
 /* Bottom Right */
+/*noinspection ALL*/
 .ui.bottom.right.pointing.dropdown > .menu {
   right: 0%;
   left: auto;
@@ -1336,6 +1432,7 @@ select.ui.dropdown {
 }
 
 /* Upward pointing */
+/*noinspection ALL*/
 .ui.upward.pointing.dropdown > .menu,
 .ui.upward.top.pointing.dropdown > .menu {
   top: auto;
@@ -1343,6 +1440,8 @@ select.ui.dropdown {
   margin: 0em 0em 0.78571429rem;
   border-radius: 0.28571429rem;
 }
+
+/*noinspection ALL*/
 .ui.upward.pointing.dropdown > .menu:after,
 .ui.upward.top.pointing.dropdown > .menu:after {
   top: 100%;

@@ -15,6 +15,7 @@
 
 
 /* Standard */
+/*noinspection ALL*/
 .ui.header {
   border: none;
   margin: calc(2rem -  0.14285em ) 0em 1rem;
@@ -28,6 +29,8 @@
 .ui.header:first-child {
   margin-top: -0.14285em;
 }
+
+/*noinspection ALL*/
 .ui.header:last-child {
   margin-bottom: 0em;
 }
@@ -36,6 +39,7 @@
    Sub Header
 ---------------*/
 
+/*noinspection ALL*/
 .ui.header .sub.header {
   display: block;
   font-weight: normal;
@@ -59,6 +63,7 @@
 }
 
 /* With Text Node */
+/*noinspection ALL*/
 .ui.header .icon:only-child {
   display: inline-block;
   padding: 0em;
@@ -116,6 +121,7 @@
 }
 
 /* Positioning */
+/*noinspection ALL*/
 .ui.header + p {
   margin-top: 0em;
 }
@@ -205,6 +211,7 @@ h5.ui.header .sub.header {
    Sub Heading
 ---------------*/
 
+/*noinspection ALL*/
 .ui.sub.header {
   padding: 0em;
   margin-bottom: 0.14285714rem;
@@ -230,11 +237,14 @@ h5.ui.header .sub.header {
         Icon
 --------------------*/
 
+/*noinspection ALL*/
 .ui.icon.header {
   display: inline-block;
   text-align: center;
   margin: 2rem 0em 1rem;
 }
+
+/*noinspection ALL*/
 .ui.icon.header:after {
   content: '';
   display: block;
@@ -242,9 +252,13 @@ h5.ui.header .sub.header {
   clear: both;
   visibility: hidden;
 }
+
+/*noinspection ALL*/
 .ui.icon.header:first-child {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.icon.header .icon {
   float: none;
   display: block;
@@ -256,6 +270,8 @@ h5.ui.header .sub.header {
   margin: 0em auto 0.5rem;
   opacity: 1;
 }
+
+/*noinspection ALL*/
 .ui.icon.header .content {
   display: block;
   padding: 0em;
@@ -266,6 +282,8 @@ h5.ui.header .sub.header {
 .ui.icon.header .square.icon {
   font-size: 2em;
 }
+
+/*noinspection ALL*/
 .ui.block.icon.header .icon {
   margin-bottom: 0em;
 }
@@ -587,12 +605,15 @@ a.ui.inverted.grey.header:hover {
        Floated
 --------------------*/
 
+/*noinspection ALL*/
 .ui.floated.header,
 .ui[class*="left floated"].header {
   float: left;
   margin-top: 0em;
   margin-right: 0.5em;
 }
+
+/*noinspection ALL*/
 .ui[class*="right floated"].header {
   float: right;
   margin-top: 0em;
@@ -603,6 +624,7 @@ a.ui.inverted.grey.header:hover {
        Fitted
 --------------------*/
 
+/*noinspection ALL*/
 .ui.fitted.header {
   padding: 0em;
 }
@@ -618,6 +640,8 @@ a.ui.inverted.grey.header:hover {
 .ui.dividing.header .sub.header {
   padding-bottom: 0.21428571rem;
 }
+
+/*noinspection ALL*/
 .ui.dividing.header .icon {
   margin-bottom: 0em;
 }
@@ -667,16 +691,22 @@ a.ui.inverted.grey.header:hover {
 .ui.attached.block.header {
   background: #F3F4F5;
 }
+
+/*noinspection ALL*/
 .ui.attached:not(.top):not(.bottom).header {
   margin-top: 0em;
   margin-bottom: 0em;
   border-top: none;
   border-radius: 0em;
 }
+
+/*noinspection ALL*/
 .ui.top.attached.header {
   margin-bottom: 0em;
   border-radius: 0.28571429rem 0.28571429rem 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.bottom.attached.header {
   margin-top: 0em;
   border-top: none;

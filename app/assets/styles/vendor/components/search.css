@@ -16,6 +16,8 @@
 .ui.search {
   position: relative;
 }
+
+/*noinspection ALL*/
 .ui.search > .prompt {
   margin: 0em;
   outline: none;
@@ -50,6 +52,7 @@
     Results
 ---------------*/
 
+/*noinspection ALL*/
 .ui.search > .results {
   display: none;
   position: absolute;
@@ -66,9 +69,13 @@
   border: 1px solid #D4D4D5;
   z-index: 998;
 }
+
+/*noinspection ALL*/
 .ui.search > .results > :first-child {
   border-radius: 0.28571429rem 0.28571429rem 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.search > .results > :last-child {
   border-radius: 0em 0em 0.28571429rem 0.28571429rem;
 }
@@ -110,9 +117,12 @@
       Info
 ---------------*/
 
+/*noinspection ALL*/
 .ui.search > .results .result .image + .content {
   margin: 0em 6em 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.search > .results .result .title {
   margin: -0.14285em 0em 0em;
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -180,6 +190,7 @@
        Loading
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.loading.search .input > i.icon:before {
   position: absolute;
   content: '';
@@ -191,6 +202,8 @@
   border-radius: 500rem;
   border: 0.2em solid rgba(0, 0, 0, 0.1);
 }
+
+/*noinspection ALL*/
 .ui.loading.search .input > i.icon:after {
   position: absolute;
   content: '';
@@ -261,6 +274,7 @@
 }
 
 /* Remove input */
+/*noinspection ALL*/
 .ui.search.selection > .icon.input > .remove.icon {
   pointer-events: none;
   position: absolute;
@@ -308,9 +322,12 @@
 }
 
 /* First / Last */
+/*noinspection ALL*/
 .ui.category.search > .results .category:first-child .name + .result {
   border-radius: 0em 0.28571429rem 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.category.search > .results .category:last-child .result:last-child {
   border-radius: 0em 0em 0.28571429rem 0em;
 }
@@ -352,10 +369,13 @@
      Left / Right
 --------------------*/
 
+/*noinspection ALL*/
 .ui[class*="left aligned"].search > .results {
   right: auto;
   left: 0%;
 }
+
+/*noinspection ALL*/
 .ui[class*="right aligned"].search > .results {
   right: 0%;
   left: auto;

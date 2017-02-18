@@ -5,16 +5,15 @@ import logging
 from flask import render_template, url_for, redirect, request, flash
 from sqlalchemy.exc import IntegrityError
 
-from . import projects
 from .. import db
 from .forms import ProjectForm
 from ..models import Project
+from . import projects
 
 logger = logging.getLogger()
 
 
-
-@projects.route("/projects/")
+@projects.route("/")
 def view_all_projects():
     """view a list of all Projects
 
@@ -23,7 +22,7 @@ def view_all_projects():
     return render_template("projects/view_all_projects.html", projects=Project.query.all())
 
 
-@projects.route("/projects/<int:project_id>")
+@projects.route("/<int:project_id>")
 def view_project(project_id):
     """View a single Project
 
@@ -32,11 +31,11 @@ def view_project(project_id):
     """
     return render_template(
         "projects/view_project.html",
-            project=Project.query.filter(Project.id == project_id).first_or_404()
+        project=Project.query.filter(Project.id == project_id).first_or_404()
     )
 
 
-@projects.route("/projects/add", methods=["GET", "POST"])
+@projects.route("/add", methods=["GET", "POST"])
 def add_project():
     """add a new Project
 
@@ -76,7 +75,7 @@ def add_project():
     return render_template("projects/add_project.html", form=form)
 
 
-@projects.route("/projects/<int:project_id>/edit", methods=["GET", "POST"])
+@projects.route("/<int:project_id>/edit", methods=["GET", "POST"])
 def edit_project(project_id):
     """edit a Project
 
@@ -117,7 +116,7 @@ def edit_project(project_id):
     return render_template("projects/edit_project.html", project=project, form=form)
 
 
-@projects.route("/projects/<int:project_id>/delete", methods=["GET", "POST"])
+@projects.route("/<int:project_id>/delete", methods=["GET", "POST"])
 def delete_project(project_id):
     """delete the Project
 

@@ -1,4 +1,4 @@
 """
 utilities for the web service
 """
-from app.utils.confgen import MakoConfigGenerator
+from app.utils.confgen import MakoConfigGenerator # noqa

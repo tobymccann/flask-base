@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for("static", filename="images/favicon.ico") }}" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="{{ url_for("static", filename="images/apple-touch-icon.png") }}">
+
+    {% assets 'vendor_css' %}<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">{% endassets %}
+    {% assets 'app_css' %}<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">{% endassets %}
+
+    {% assets 'vendor_js' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+    {% assets 'app_js' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+    <style type="text/css">
+        /* reformat the notification container */
+        body {
+            margin-bottom: 100px;
+        }
+        .uk-notify {
+            width: 60%;
+            left: 0;
+            margin-left: 20%
+        }
+
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+    <div class="ui inverted menu">
+      <div class="header item" href="{{ url_for("tools.index") }}"><i class="settings icon"></i>NCG</div>
+      <a href="#sidebar" class="item" data-uk-offcanvas></a>
+      <div class="ui dropdown item">
+        Projects
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="{{ url_for("projects.view_all_projects") }}"><i class="folder icon"></i> View all Projects</a>
+          <div class="item">Another Action</div>
+          <div class="item">Something else here</div>
+          <div class="divider"></div>
+          <div class="item">Separated Link</div>
+          <div class="divider"></div>
+          <div class="item">One more separated link</div>
+        </div>
+      </div>
+      <div class="ui dropdown item">
+        Tools
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">Action</div>
+          <div class="item">Another Action</div>
+          <div class="item">Something else here</div>
+          <div class="divider"></div>
+          <a class="item" href="{{ url_for("tools.appliance_status_json") }}"><i class="settings icon"></i>Appliance Status</a>
+        </div>
+      </div>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui transparent inverted icon input">
+            <i class="search icon"></i>
+            <input type="text" placeholder="Search">
+          </div>
+        </div>
+        <a class="item" href="#"><i class="chevron up icon" title="back to top" data-position="bottom"></i></a>
+      </div>
+    </div>
+{% block sidebar %}
+    <!-- Responsive Menu -->
+    <div class="ui bottom attached segment pushable">
+        <div class="ui inverted left vertical sidebar menu">
+            <a class="item" href="{{ url_for("main.index") }}">
+                <i class="home icon"></i>
+                Home
+            </a>
+            <a class="item" href="{{ url_for("projects.view_all_projects") }}">
+                <i class="block layout icon"></i>
+                View All Projects
+            </a>
+            <a class="item" href="{{ url_for("tools.appliance_status_json") }}">
+                <i class="dashboard icon"></i>
+                Appliance Status
+            </a>
+            <div class="divider"></div>
+            <a class="item" href="{{ url_for("tools.how_to_use") }}">
+                <i class="help icon"></i>
+                How to use
+            </a>
+            <a class="item" href="{{ url_for("tools.template_syntax") }}">
+                <i class="info icon"></i>
+                Template Syntax
+            </a>
+            <a class="item" href="https://github.com/tobymccann/network-config-generator" target="_blank">
+                <i class="github icon"></i>
+                Github Repo
+            </a>
+        </div>
+    {% endblock %}
+        <div class="pusher">
+            <div class="ui container">
+                {% block full_size_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    {% block footer_javascript %}{% endblock %}
+    <script type="application/javascript">
+    $(document).ready(function() {
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}{% for category, message in messages %}
+            {% if category == "error" %}
+                UIkit.notify("<i class='uk-icon-exclamation-circle'></i> {{ message|safe }}", {
+                    status:'danger',
+                    timeout: 0,
+                    pos:'top-center'
+                });
+            {% elif category == "warning" %}
+                UIkit.notify("<i class='uk-icon-check-circle'></i> {{ message|safe }}", {
+                    status:'warning',
+                    timeout: 3000,
+                    pos:'top-center'
+                });
+            {% elif category == "success" %}
+                UIkit.notify("<i class='uk-icon-check-circle'></i> {{ message|safe }}", {
+                    status:'success',
+                    timeout: 3000,
+                    pos:'top-center'
+                });
+            {% else %}
+                UIkit.notify("<i class='uk-icon-info-circle'></i> {{ message|safe }}", {
+                    status:'info',
+                    timeout: 5000,
+                    pos:'top-center'
+                });
+            {% endif %}
+        {% endfor %}{% endif %}
+    {% endwith %}
+    })
+    </script>
+</body>
+</html>

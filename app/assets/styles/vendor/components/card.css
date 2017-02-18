@@ -18,6 +18,7 @@
       Card
 ---------------*/
 
+/*noinspection ALL*/
 .ui.cards > .card,
 .ui.card {
   max-width: 100%;
@@ -42,6 +43,8 @@
   transition: box-shadow 0.1s ease, transform 0.1s ease, -webkit-transform 0.1s ease;
   z-index: '';
 }
+
+/*noinspection ALL*/
 .ui.card {
   margin: 1em 0em;
 }
@@ -49,9 +52,13 @@
 .ui.card a {
   cursor: pointer;
 }
+
+/*noinspection ALL*/
 .ui.card:first-child {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.card:last-child {
   margin-bottom: 0em;
 }
@@ -77,6 +84,7 @@
 }
 
 /* Clearing */
+/*noinspection ALL*/
 .ui.cards:after,
 .ui.card:after {
   display: block;
@@ -96,11 +104,14 @@
   Rounded Edges
 ---------------*/
 
+/*noinspection ALL*/
 .ui.cards > .card > :first-child,
 .ui.card > :first-child {
   border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;
   border-top: none !important;
 }
+
+/*noinspection ALL*/
 .ui.cards > .card > :last-child,
 .ui.card > :last-child {
   border-radius: 0em 0em 0.28571429rem 0.28571429rem !important;
@@ -114,6 +125,7 @@
      Images
 ---------------*/
 
+/*noinspection ALL*/
 .ui.cards > .card > .image,
 .ui.card > .image {
   position: relative;
@@ -140,6 +152,7 @@
      Content
 ---------------*/
 
+/*noinspection ALL*/
 .ui.cards > .card > .content,
 .ui.card > .content {
   -webkit-box-flex: 1;
@@ -154,6 +167,8 @@
   font-size: 1em;
   border-radius: 0em;
 }
+
+/*noinspection ALL*/
 .ui.cards > .card > .content:after,
 .ui.card > .content:after {
   display: block;
@@ -249,10 +264,13 @@
     Paragraph
 ---------------*/
 
+/*noinspection ALL*/
 .ui.cards > .card > .content p,
 .ui.card > .content p {
   margin: 0em 0em 0.5em;
 }
+
+/*noinspection ALL*/
 .ui.cards > .card > .content p:last-child,
 .ui.card > .content p:last-child {
   margin-bottom: 0em;
@@ -271,10 +289,14 @@
 .ui.card .meta * {
   margin-right: 0.3em;
 }
+
+/*noinspection ALL*/
 .ui.cards > .card .meta :last-child,
 .ui.card .meta :last-child {
   margin-right: 0em;
 }
+
+/*noinspection ALL*/
 .ui.cards > .card .meta [class*="right floated"],
 .ui.card .meta [class*="right floated"] {
   margin-right: 0em;
@@ -322,6 +344,7 @@
      Buttons
 ---------------*/
 
+/*noinspection ALL*/
 .ui.cards > .card > .buttons,
 .ui.card > .buttons,
 .ui.cards > .card > .button,
@@ -391,6 +414,7 @@
   Extra Content
 -----------------*/
 
+/*noinspection ALL*/
 .ui.cards > .card > .extra,
 .ui.card > .extra {
   max-width: 100%;
@@ -430,16 +454,21 @@
        Raised
 --------------------*/
 
+/*noinspection ALL*/
 .ui.raised.cards > .card,
 .ui.raised.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.15);
 }
+
+/*noinspection ALL*/
 .ui.raised.cards a.card:hover,
 .ui.link.cards .raised.card:hover,
 a.ui.raised.card:hover,
 .ui.link.raised.card:hover {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 4px 0px rgba(34, 36, 38, 0.15), 0px 2px 10px 0px rgba(34, 36, 38, 0.25);
 }
+
+/*noinspection ALL*/
 .ui.raised.cards > .card,
 .ui.raised.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.15);
@@ -479,6 +508,8 @@ a.ui.card,
   -webkit-transform: none;
           transform: none;
 }
+
+/*noinspection ALL*/
 .ui.cards a.card:hover,
 .ui.link.cards .card:hover,
 a.ui.card:hover,
@@ -498,11 +529,14 @@ a.ui.card:hover,
 
 
 /* Red */
+/*noinspection ALL*/
 .ui.red.cards > .card,
 .ui.cards > .red.card,
 .ui.red.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #DB2828, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.red.cards > .card:hover,
 .ui.cards > .red.card:hover,
 .ui.red.card:hover {
@@ -510,11 +544,14 @@ a.ui.card:hover,
 }
 
 /* Orange */
+/*noinspection ALL*/
 .ui.orange.cards > .card,
 .ui.cards > .orange.card,
 .ui.orange.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #F2711C, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.orange.cards > .card:hover,
 .ui.cards > .orange.card:hover,
 .ui.orange.card:hover {
@@ -522,11 +559,14 @@ a.ui.card:hover,
 }
 
 /* Yellow */
+/*noinspection ALL*/
 .ui.yellow.cards > .card,
 .ui.cards > .yellow.card,
 .ui.yellow.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #FBBD08, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.yellow.cards > .card:hover,
 .ui.cards > .yellow.card:hover,
 .ui.yellow.card:hover {
@@ -534,11 +574,14 @@ a.ui.card:hover,
 }
 
 /* Olive */
+/*noinspection ALL*/
 .ui.olive.cards > .card,
 .ui.cards > .olive.card,
 .ui.olive.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #B5CC18, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.olive.cards > .card:hover,
 .ui.cards > .olive.card:hover,
 .ui.olive.card:hover {
@@ -546,11 +589,14 @@ a.ui.card:hover,
 }
 
 /* Green */
+/*noinspection ALL*/
 .ui.green.cards > .card,
 .ui.cards > .green.card,
 .ui.green.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #21BA45, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.green.cards > .card:hover,
 .ui.cards > .green.card:hover,
 .ui.green.card:hover {
@@ -558,11 +604,14 @@ a.ui.card:hover,
 }
 
 /* Teal */
+/*noinspection ALL*/
 .ui.teal.cards > .card,
 .ui.cards > .teal.card,
 .ui.teal.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #00B5AD, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.teal.cards > .card:hover,
 .ui.cards > .teal.card:hover,
 .ui.teal.card:hover {
@@ -570,11 +619,14 @@ a.ui.card:hover,
 }
 
 /* Blue */
+/*noinspection ALL*/
 .ui.blue.cards > .card,
 .ui.cards > .blue.card,
 .ui.blue.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #2185D0, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.blue.cards > .card:hover,
 .ui.cards > .blue.card:hover,
 .ui.blue.card:hover {
@@ -582,11 +634,14 @@ a.ui.card:hover,
 }
 
 /* Violet */
+/*noinspection ALL*/
 .ui.violet.cards > .card,
 .ui.cards > .violet.card,
 .ui.violet.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #6435C9, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.violet.cards > .card:hover,
 .ui.cards > .violet.card:hover,
 .ui.violet.card:hover {
@@ -594,11 +649,14 @@ a.ui.card:hover,
 }
 
 /* Purple */
+/*noinspection ALL*/
 .ui.purple.cards > .card,
 .ui.cards > .purple.card,
 .ui.purple.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #A333C8, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.purple.cards > .card:hover,
 .ui.cards > .purple.card:hover,
 .ui.purple.card:hover {
@@ -606,11 +664,14 @@ a.ui.card:hover,
 }
 
 /* Pink */
+/*noinspection ALL*/
 .ui.pink.cards > .card,
 .ui.cards > .pink.card,
 .ui.pink.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #E03997, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.pink.cards > .card:hover,
 .ui.cards > .pink.card:hover,
 .ui.pink.card:hover {
@@ -618,11 +679,14 @@ a.ui.card:hover,
 }
 
 /* Brown */
+/*noinspection ALL*/
 .ui.brown.cards > .card,
 .ui.cards > .brown.card,
 .ui.brown.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #A5673F, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.brown.cards > .card:hover,
 .ui.cards > .brown.card:hover,
 .ui.brown.card:hover {
@@ -630,11 +694,14 @@ a.ui.card:hover,
 }
 
 /* Grey */
+/*noinspection ALL*/
 .ui.grey.cards > .card,
 .ui.cards > .grey.card,
 .ui.grey.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #767676, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.grey.cards > .card:hover,
 .ui.cards > .grey.card:hover,
 .ui.grey.card:hover {
@@ -642,11 +709,14 @@ a.ui.card:hover,
 }
 
 /* Black */
+/*noinspection ALL*/
 .ui.black.cards > .card,
 .ui.cards > .black.card,
 .ui.black.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 0px 0px #1B1C1D, 0px 1px 3px 0px #D4D4D5;
 }
+
+/*noinspection ALL*/
 .ui.black.cards > .card:hover,
 .ui.cards > .black.card:hover,
 .ui.black.card:hover {
@@ -657,6 +727,7 @@ a.ui.card:hover,
    Card Count
 ---------------*/
 
+/*noinspection ALL*/
 .ui.one.cards {
   margin-left: 0em;
   margin-right: 0em;
@@ -755,11 +826,14 @@ a.ui.card:hover,
 
 /* Mobile Only */
 @media only screen and (max-width: 767px) {
-  .ui.two.doubling.cards {
+    /*noinspection ALL*/
+    .ui.two.doubling.cards {
     margin-left: 0em;
     margin-right: 0em;
   }
-  .ui.two.doubling.cards .card {
+
+    /*noinspection ALL*/
+    .ui.two.doubling.cards .card {
     width: 100%;
     margin-left: 0em;
     margin-right: 0em;
@@ -840,11 +914,14 @@ a.ui.card:hover,
 
 /* Tablet Only */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .ui.two.doubling.cards {
+    /*noinspection ALL*/
+    .ui.two.doubling.cards {
     margin-left: 0em;
     margin-right: 0em;
   }
-  .ui.two.doubling.cards .card {
+
+    /*noinspection ALL*/
+    .ui.two.doubling.cards .card {
     width: 100%;
     margin-left: 0em;
     margin-right: 0em;
@@ -931,7 +1008,9 @@ a.ui.card:hover,
   .ui.stackable.cards {
     display: block !important;
   }
-  .ui.stackable.cards .card:first-child {
+
+    /*noinspection ALL*/
+    .ui.stackable.cards .card:first-child {
     margin-top: 0em !important;
   }
   .ui.stackable.cards > .card {

@@ -13,12 +13,17 @@
          Activity Feed
 *******************************/
 
+/*noinspection ALL*/
 .ui.feed {
   margin: 1em 0em;
 }
+
+/*noinspection ALL*/
 .ui.feed:first-child {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.feed:last-child {
   margin-bottom: 0em;
 }
@@ -30,6 +35,7 @@
 
 
 /* Event */
+/*noinspection ALL*/
 .ui.feed > .event {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,10 +50,14 @@
   background: none;
   border-top: none;
 }
+
+/*noinspection ALL*/
 .ui.feed > .event:first-child {
   border-top: 0px;
   padding-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.feed > .event:last-child {
   padding-bottom: 0em;
 }
@@ -80,6 +90,8 @@
   height: auto;
   border-radius: 500rem;
 }
+
+/*noinspection ALL*/
 .ui.feed > .event > .label + .content {
   margin: 0.5em 0em 0.35714286em 1.14285714em;
 }
@@ -101,6 +113,8 @@
   text-align: left;
   word-wrap: break-word;
 }
+
+/*noinspection ALL*/
 .ui.feed > .event:last-child > .content {
   padding-bottom: 0em;
 }
@@ -114,6 +128,7 @@
       Date
 ---------------*/
 
+/*noinspection ALL*/
 .ui.feed > .event > .content .date {
   margin: -0.5rem 0em 0em;
   padding: 0em;
@@ -127,6 +142,7 @@
      Summary
 ---------------*/
 
+/*noinspection ALL*/
 .ui.feed > .event > .content .summary {
   margin: 0em;
   font-size: 1em;
@@ -135,6 +151,7 @@
 }
 
 /* Summary Image */
+/*noinspection ALL*/
 .ui.feed > .event > .content .summary img {
   display: inline-block;
   width: auto;
@@ -148,12 +165,15 @@
       User
 ---------------*/
 
+/*noinspection ALL*/
 .ui.feed > .event > .content .user {
   display: inline-block;
   font-weight: bold;
   margin-right: 0em;
   vertical-align: baseline;
 }
+
+/*noinspection ALL*/
 .ui.feed > .event > .content .user img {
   margin: -0.25em 0.25em 0em 0em;
   width: auto;
@@ -167,6 +187,7 @@
 
 
 /* Date inside Summary */
+/*noinspection ALL*/
 .ui.feed > .event > .content .summary > .date {
   display: inline-block;
   float: none;
@@ -182,6 +203,7 @@
   Extra Summary
 ---------------*/
 
+/*noinspection ALL*/
 .ui.feed > .event > .content .extra {
   margin: 0.5em 0em 0em;
   background: none;
@@ -190,6 +212,7 @@
 }
 
 /* Images */
+/*noinspection ALL*/
 .ui.feed > .event > .content .extra.images img {
   display: inline-block;
   margin: 0em 0.25em 0em 0em;
@@ -197,6 +220,7 @@
 }
 
 /* Text */
+/*noinspection ALL*/
 .ui.feed > .event > .content .extra.text {
   padding: 0em;
   border-left: none;
@@ -209,6 +233,7 @@
       Meta
 ---------------*/
 
+/*noinspection ALL*/
 .ui.feed > .event > .content .meta {
   display: inline-block;
   font-size: 0.85714286em;
@@ -224,6 +249,8 @@
   position: relative;
   margin-left: 0.75em;
 }
+
+/*noinspection ALL*/
 .ui.feed > .event > .content .meta > *:after {
   content: '';
   color: rgba(0, 0, 0, 0.2);
@@ -246,6 +273,7 @@
 }
 
 /* First element */
+/*noinspection ALL*/
 .ui.feed > .event > .content .meta > :first-child {
   margin-left: 0em;
 }

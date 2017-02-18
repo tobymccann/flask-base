@@ -27,6 +27,7 @@
         Content
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.form > p {
   margin: 1em 0em;
 }
@@ -35,14 +36,19 @@
         Field
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.form .field {
   clear: both;
   margin: 0em 0em 1em;
 }
+
+/*noinspection ALL*/
 .ui.form .field:last-child,
 .ui.form .fields:last-child .field {
   margin-bottom: 0em;
 }
+
+/*noinspection ALL*/
 .ui.form .fields .field {
   clear: both;
   margin: 0em;
@@ -52,6 +58,7 @@
         Labels
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.form .field > label {
   display: block;
   margin: 0em 0em 0.28571429rem 0em;
@@ -87,6 +94,8 @@
 .ui.form ::-webkit-inner-spin-button {
   height: 1.2142em;
 }
+
+/*noinspection ALL*/
 .ui.form input:not([type]),
 .ui.form input[type="date"],
 .ui.form input[type="datetime-local"],
@@ -117,6 +126,7 @@
 }
 
 /* Text Area */
+/*noinspection ALL*/
 .ui.form textarea {
   margin: 0em;
   -webkit-appearance: none;
@@ -156,6 +166,7 @@
      Basic Select
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.form select {
   display: block;
   height: auto;
@@ -219,6 +230,7 @@
 }
 
 /* Full Width Input */
+/*noinspection ALL*/
 .ui.form .ten.fields .ui.input input,
 .ui.form .nine.fields .ui.input input,
 .ui.form .eight.fields .ui.input input,
@@ -246,6 +258,7 @@
 }
 
 /* Assumptions */
+/*noinspection ALL*/
 .ui.form .message:first-child {
   margin-top: 0px;
 }
@@ -260,11 +273,15 @@
   border: 1px solid #E0B4B4 !important;
   color: #9F3A38 !important;
 }
+
+/*noinspection ALL*/
 .ui.form .inline.fields .field .prompt,
 .ui.form .inline.field .prompt {
   vertical-align: top;
   margin: -0.25em 0em -0.5em 0.5em;
 }
+
+/*noinspection ALL*/
 .ui.form .inline.fields .field .prompt:before,
 .ui.form .inline.field .prompt:before {
   border-width: 0px 0px 1px 1px;
@@ -284,18 +301,21 @@
       Autofilled
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.form .field.field input:-webkit-autofill {
   box-shadow: 0px 0px 0px 100px #FFFFF0 inset !important;
   border-color: #E5DFA1 !important;
 }
 
 /* Focus */
+/*noinspection ALL*/
 .ui.form .field.field input:-webkit-autofill:focus {
   box-shadow: 0px 0px 0px 100px #FFFFF0 inset !important;
   border-color: #D5C315 !important;
 }
 
 /* Error */
+/*noinspection ALL*/
 .ui.form .error.error input:-webkit-autofill {
   box-shadow: 0px 0px 0px 100px #FFFAF0 inset !important;
   border-color: #E0B4B4 !important;
@@ -350,6 +370,7 @@
         Focus
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.form input:not([type]):focus,
 .ui.form input[type="date"]:focus,
 .ui.form input[type="datetime-local"]:focus,
@@ -368,6 +389,8 @@
   background: #FFFFFF;
   box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
 }
+
+/*noinspection ALL*/
 .ui.form textarea:focus {
   color: rgba(0, 0, 0, 0.95);
   border-color: #85B7D9;
@@ -602,6 +625,8 @@
   cursor: default;
   pointer-events: none;
 }
+
+/*noinspection ALL*/
 .ui.loading.form:before {
   position: absolute;
   content: '';
@@ -612,6 +637,8 @@
   height: 100%;
   z-index: 100;
 }
+
+/*noinspection ALL*/
 .ui.loading.form:after {
   position: absolute;
   content: '';
@@ -663,6 +690,7 @@
      Required Field
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.form .required.fields:not(.grouped) > .field > label:after,
 .ui.form .required.fields.grouped > label:after,
 .ui.form .required.field > label:after,
@@ -678,6 +706,8 @@
   display: inline-block;
   vertical-align: top;
 }
+
+/*noinspection ALL*/
 .ui.form .required.fields:not(.grouped) > .field > .checkbox:after,
 .ui.form .required.field > .checkbox:after {
   position: absolute;
@@ -734,13 +764,18 @@
 
 
 /* Grouped Vertically */
+/*noinspection ALL*/
 .ui.form .grouped.fields {
   display: block;
   margin: 0em 0em 1em;
 }
+
+/*noinspection ALL*/
 .ui.form .grouped.fields:last-child {
   margin-bottom: 0em;
 }
+
+/*noinspection ALL*/
 .ui.form .grouped.fields > label {
   margin: 0em 0em 0.28571429rem 0em;
   color: rgba(0, 0, 0, 0.87);
@@ -748,6 +783,8 @@
   font-weight: bold;
   text-transform: none;
 }
+
+/*noinspection ALL*/
 .ui.form .grouped.fields .field,
 .ui.form .grouped.inline.fields .field {
   display: block;
@@ -761,6 +798,7 @@
 
 
 /* Split fields */
+/*noinspection ALL*/
 .ui.form .fields {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -827,7 +865,9 @@
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .ui[class*="equal width"].form .fields > .field,
+
+    /*noinspection ALL*/
+    .ui[class*="equal width"].form .fields > .field,
   .ui.form [class*="equal width"].fields > .field,
   .ui.form .two.fields > .fields,
   .ui.form .two.fields > .field,
@@ -934,7 +974,9 @@
   .ui.form .fields > .sixteen.wide.field {
     width: 100% !important;
   }
-  .ui.form .fields {
+
+    /*noinspection ALL*/
+    .ui.form .fields {
     margin-bottom: 0em;
   }
 }
@@ -955,18 +997,22 @@
     Inline Fields
 ---------------------*/
 
+/*noinspection ALL*/
 .ui.form .inline.fields {
   margin: 0em 0em 1em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
+
+/*noinspection ALL*/
 .ui.form .inline.fields .field {
   margin: 0em;
   padding: 0em 1em 0em 0em;
 }
 
 /* Inline Label */
+/*noinspection ALL*/
 .ui.form .inline.fields > label,
 .ui.form .inline.fields .field > label,
 .ui.form .inline.fields .field > p,
@@ -984,11 +1030,13 @@
 }
 
 /* Grouped Inline Label */
+/*noinspection ALL*/
 .ui.form .inline.fields > label {
   margin: 0.035714em 1em 0em 0em;
 }
 
 /* Inline Input */
+/*noinspection ALL*/
 .ui.form .inline.fields .field > input,
 .ui.form .inline.fields .field > select,
 .ui.form .inline.field > input,
@@ -1002,10 +1050,13 @@
 }
 
 /* Label */
+/*noinspection ALL*/
 .ui.form .inline.fields .field > :first-child,
 .ui.form .inline.field > :first-child {
   margin: 0em 0.85714286em 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.form .inline.fields .field > :only-child,
 .ui.form .inline.field > :only-child {
   margin: 0em;

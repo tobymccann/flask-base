@@ -33,7 +33,6 @@ class Config:
 
     ROLLBAR_ACCESS_TOKEN = os.environ.get('ROLLBAR_ACCESS_TOKEN')
 
-
     # Parse the REDIS_URL to set RQ config variables
     urllib.parse.uses_netloc.append('redis')
     url = urllib.parse.urlparse(REDIS_URL)

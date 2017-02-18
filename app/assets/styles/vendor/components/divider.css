@@ -13,6 +13,7 @@
             Divider
 *******************************/
 
+/*noinspection ALL*/
 .ui.divider {
   margin: 1rem 0rem;
   line-height: 1;
@@ -80,6 +81,7 @@
     Vertical
 ---------------*/
 
+/*noinspection ALL*/
 .ui.vertical.divider {
   position: absolute;
   z-index: 2;
@@ -94,6 +96,8 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
+
+/*noinspection ALL*/
 .ui.vertical.divider:before,
 .ui.vertical.divider:after {
   position: absolute;
@@ -108,6 +112,8 @@
 .ui.vertical.divider:before {
   top: -100%;
 }
+
+/*noinspection ALL*/
 .ui.vertical.divider:after {
   top: auto;
   bottom: 0px;
@@ -159,6 +165,7 @@
       Icon
 ---------------*/
 
+/*noinspection ALL*/
 .ui.divider > .icon {
   margin: 0rem;
   font-size: 1rem;
@@ -206,6 +213,7 @@
     Fitted
 ---------------*/
 
+/*noinspection ALL*/
 .ui.fitted.divider {
   margin: 0em;
 }

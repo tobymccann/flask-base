@@ -20,7 +20,7 @@
     </a>
 {% endmacro %}
 
-{% extends "base.html" %}
+{% extends "layouts/base.html" %}
 {% block title %}Network Configuration Generator{% endblock %}
 
 {% block content %}
@@ -32,10 +32,10 @@
     </p>
 
     {% if all_project_data|length == 0 %}
-        <p class="uk-text-large"><a class="uk-button-link" href="{{ url_for("add_project") }}" id="create_project">Create your first Project here!</a></p>
+        <p class="uk-text-large"><a class="uk-button-link" href="{{ url_for("projects.add_project") }}" id="create_project">Create your first Project here!</a></p>
     {% else %}
-        <p class="uk-text-large">Please choose a project or <a class="uk-button-link" href="{{ url_for("add_project") }}" id="create_project">create a new Project</a>.
+        <p class="uk-text-large">Please choose a project or <a class="uk-button-link" href="{{ url_for("projects.add_project") }}" id="create_project">create a new Project</a>.
 
-        {% include 'project/../projects/_projects_table.html' %}
+        {% include 'projects/_projects_table.html' %}
     {% endif %}
 {% endblock %}

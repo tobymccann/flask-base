@@ -16,6 +16,8 @@
 .dimmable:not(.body) {
   position: relative;
 }
+
+/*noinspection ALL*/
 .ui.dimmer {
   display: none;
   position: absolute;
@@ -163,6 +165,7 @@ body.dimmable > .dimmer {
 
 
 /* Displays without javascript */
+/*noinspection ALL*/
 .ui.simple.dimmer {
   display: block;
   overflow: hidden;

@@ -13,6 +13,7 @@
             Label
 *******************************/
 
+/*noinspection ALL*/
 .ui.label {
   display: inline-block;
   line-height: 1;
@@ -29,9 +30,13 @@
   -webkit-transition: background 0.1s ease;
   transition: background 0.1s ease;
 }
+
+/*noinspection ALL*/
 .ui.label:first-child {
   margin-left: 0em;
 }
+
+/*noinspection ALL*/
 .ui.label:last-child {
   margin-right: 0em;
 }
@@ -61,6 +66,7 @@ a.ui.label {
 }
 
 /* Icon */
+/*noinspection ALL*/
 .ui.label > .icon {
   width: auto;
   margin: 0em 0.75em 0em 0em;
@@ -74,11 +80,14 @@ a.ui.label {
   margin-left: 1em;
   opacity: 0.8;
 }
+
+/*noinspection ALL*/
 .ui.label > .detail .icon {
   margin: 0em 0.25em 0em 0em;
 }
 
 /* Removable label */
+/*noinspection ALL*/
 .ui.label > .close.icon,
 .ui.label > .delete.icon {
   cursor: pointer;
@@ -97,6 +106,7 @@ a.ui.label {
        Group
 --------------------*/
 
+/*noinspection ALL*/
 .ui.labels > .label {
   margin: 0em 0.5em 0.5em 0em;
 }
@@ -130,6 +140,8 @@ a.ui.label {
 .ui.top.attached.label + [class*="right floated"] + * {
   margin-top: 2rem !important;
 }
+
+/*noinspection ALL*/
 .ui.bottom.attached.label:first-child ~ :last-child:not(.attached) {
   margin-top: 0em;
   margin-bottom: 2rem !important;
@@ -140,6 +152,7 @@ a.ui.label {
              Types
 *******************************/
 
+/*noinspection ALL*/
 .ui.image.label {
   width: auto !important;
   margin-top: 0em;
@@ -152,6 +165,8 @@ a.ui.label {
   border-radius: 0.28571429rem;
   box-shadow: none;
 }
+
+/*noinspection ALL*/
 .ui.image.label img {
   display: inline-block;
   vertical-align: top;
@@ -159,6 +174,8 @@ a.ui.label {
   margin: -0.5833em 0.5em -0.5833em -0.5em;
   border-radius: 0.28571429rem 0em 0em 0.28571429rem;
 }
+
+/*noinspection ALL*/
 .ui.image.label .detail {
   background: rgba(0, 0, 0, 0.1);
   margin: -0.5833em -0.833em -0.5833em 0.5em;
@@ -170,6 +187,7 @@ a.ui.label {
          Tag
 --------------------*/
 
+/*noinspection ALL*/
 .ui.tag.labels .label,
 .ui.tag.label {
   margin-left: 1em;
@@ -213,6 +231,7 @@ a.ui.label {
     Corner Label
 --------------------*/
 
+/*noinspection ALL*/
 .ui.corner.label {
   position: absolute;
   top: 0em;
@@ -232,6 +251,8 @@ a.ui.label {
 .ui.corner.label {
   background-color: transparent !important;
 }
+
+/*noinspection ALL*/
 .ui.corner.label:after {
   position: absolute;
   content: "";
@@ -249,6 +270,8 @@ a.ui.label {
   -webkit-transition: border-color 0.1s ease;
   transition: border-color 0.1s ease;
 }
+
+/*noinspection ALL*/
 .ui.corner.label .icon {
   cursor: default;
   position: relative;
@@ -259,11 +282,14 @@ a.ui.label {
 }
 
 /* Left Corner */
+/*noinspection ALL*/
 .ui.left.corner.label,
 .ui.left.corner.label:after {
   right: auto;
   left: 0em;
 }
+
+/*noinspection ALL*/
 .ui.left.corner.label:after {
   border-top: 4em solid transparent;
   border-right: 4em solid transparent;
@@ -289,6 +315,7 @@ a.ui.label {
        Ribbon
 --------------------*/
 
+/*noinspection ALL*/
 .ui.ribbon.label {
   position: relative;
   margin: 0em;
@@ -298,6 +325,8 @@ a.ui.label {
   border-radius: 0em 0.28571429rem 0.28571429rem 0em;
   border-color: rgba(0, 0, 0, 0.15);
 }
+
+/*noinspection ALL*/
 .ui.ribbon.label:after {
   position: absolute;
   content: '';
@@ -326,12 +355,15 @@ a.ui.label {
 }
 
 /* Right Ribbon */
+/*noinspection ALL*/
 .ui[class*="right ribbon"].label {
   text-align: left;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   border-radius: 0.28571429rem 0em 0em 0.28571429rem;
 }
+
+/*noinspection ALL*/
 .ui[class*="right ribbon"].label:after {
   left: auto;
   right: 0%;
@@ -370,6 +402,7 @@ a.ui.label {
       Attached
 --------------------*/
 
+/*noinspection ALL*/
 .ui[class*="top attached"].label,
 .ui.attached.label {
   width: 100%;
@@ -380,28 +413,38 @@ a.ui.label {
   padding: 0.75em 1em;
   border-radius: 0.21428571rem 0.21428571rem 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui[class*="bottom attached"].label {
   top: auto;
   bottom: 0em;
   border-radius: 0em 0em 0.21428571rem 0.21428571rem;
 }
+
+/*noinspection ALL*/
 .ui[class*="top left attached"].label {
   width: auto;
   margin-top: 0em !important;
   border-radius: 0.21428571rem 0em 0.28571429rem 0em;
 }
+
+/*noinspection ALL*/
 .ui[class*="top right attached"].label {
   width: auto;
   left: auto;
   right: 0em;
   border-radius: 0em 0.21428571rem 0em 0.28571429rem;
 }
+
+/*noinspection ALL*/
 .ui[class*="bottom left attached"].label {
   width: auto;
   top: auto;
   bottom: 0em;
   border-radius: 0em 0.28571429rem 0em 0.21428571rem;
 }
+
+/*noinspection ALL*/
 .ui[class*="bottom right attached"].label {
   top: auto;
   bottom: 0em;
@@ -1085,6 +1128,7 @@ a.ui.basic.label:hover {
      Horizontal
 --------------------*/
 
+/*noinspection ALL*/
 .ui.horizontal.labels .label,
 .ui.horizontal.label {
   margin: 0em 0.5em 0em 0em;
@@ -1106,6 +1150,8 @@ a.ui.basic.label:hover {
   text-align: center;
   border-radius: 500rem;
 }
+
+/*noinspection ALL*/
 .ui.empty.circular.labels .label,
 .ui.empty.circular.label {
   min-width: 0em;
@@ -1154,6 +1200,8 @@ a.ui.basic.label:hover {
 .ui[class*="pointing above"].label {
   margin-top: 1em;
 }
+
+/*noinspection ALL*/
 .ui.pointing.label:before,
 .ui[class*="pointing above"].label:before {
   border-width: 1px 0px 0px 1px;
@@ -1165,11 +1213,14 @@ a.ui.basic.label:hover {
 
 /*--- Below ---*/
 
+/*noinspection ALL*/
 .ui[class*="bottom pointing"].label,
 .ui[class*="pointing below"].label {
   margin-top: 0em;
   margin-bottom: 1em;
 }
+
+/*noinspection ALL*/
 .ui[class*="bottom pointing"].label:before,
 .ui[class*="pointing below"].label:before {
   border-width: 0px 1px 1px 0px;
@@ -1183,10 +1234,13 @@ a.ui.basic.label:hover {
 
 /*--- Left ---*/
 
+/*noinspection ALL*/
 .ui[class*="left pointing"].label {
   margin-top: 0em;
   margin-left: 0.6666em;
 }
+
+/*noinspection ALL*/
 .ui[class*="left pointing"].label:before {
   border-width: 0px 0px 1px 1px;
   -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
@@ -1199,10 +1253,13 @@ a.ui.basic.label:hover {
 
 /*--- Right ---*/
 
+/*noinspection ALL*/
 .ui[class*="right pointing"].label {
   margin-top: 0em;
   margin-right: 0.6666em;
 }
+
+/*noinspection ALL*/
 .ui[class*="right pointing"].label:before {
   border-width: 1px 1px 0px 0px;
   -webkit-transform: translateX(50%) translateY(-50%) rotate(45deg);
@@ -1249,6 +1306,7 @@ a.ui.basic.label:hover {
    Floating Label
 -------------------*/
 
+/*noinspection ALL*/
 .ui.floating.label {
   position: absolute;
   z-index: 100;

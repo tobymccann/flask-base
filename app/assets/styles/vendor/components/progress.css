@@ -13,6 +13,7 @@
             Progress
 *******************************/
 
+/*noinspection ALL*/
 .ui.progress {
   position: relative;
   display: block;
@@ -24,9 +25,13 @@
   padding: 0em;
   border-radius: 0.28571429rem;
 }
+
+/*noinspection ALL*/
 .ui.progress:first-child {
   margin: 0em 0em 2.5em;
 }
+
+/*noinspection ALL*/
 .ui.progress:last-child {
   margin: 0em 0em 1.5em;
 }
@@ -38,6 +43,7 @@
 
 
 /* Activity Bar */
+/*noinspection ALL*/
 .ui.progress .bar {
   display: block;
   line-height: 1;
@@ -68,6 +74,7 @@
 }
 
 /* Label */
+/*noinspection ALL*/
 .ui.progress > .label {
   position: absolute;
   width: 100%;
@@ -230,6 +237,8 @@
   position: relative;
   min-width: 2em;
 }
+
+/*noinspection ALL*/
 .ui.active.progress .bar::after {
   content: '';
   opacity: 0;
@@ -316,12 +325,15 @@
 
 
 /* bottom attached */
+/*noinspection ALL*/
 .ui.progress.attached {
   background: transparent;
   position: relative;
   border: none;
   margin: 0em;
 }
+
+/*noinspection ALL*/
 .ui.progress.attached,
 .ui.progress.attached .bar {
   display: block;
@@ -330,16 +342,21 @@
   overflow: hidden;
   border-radius: 0em 0em 0.28571429rem 0.28571429rem;
 }
+
+/*noinspection ALL*/
 .ui.progress.attached .bar {
   border-radius: 0em;
 }
 
 /* top attached */
+/*noinspection ALL*/
 .ui.progress.top.attached,
 .ui.progress.top.attached .bar {
   top: 0px;
   border-radius: 0.28571429rem 0.28571429rem 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.progress.top.attached .bar {
   border-radius: 0em;
 }

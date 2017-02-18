@@ -1,4 +1,3 @@
-
 """
 WTF forms for the web service
 """
@@ -10,7 +9,6 @@ from .. import db
 from ..models import TemplateValueSet, TemplateVariable
 from ..utils import MakoConfigGenerator
 from ..utils.confgen import TemplateSyntaxException
-
 
 
 def reserved_template_variable_names(form, field):

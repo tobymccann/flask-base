@@ -33,6 +33,7 @@
 }
 
 /* HTML Checkbox */
+/*noinspection ALL*/
 .ui.checkbox input[type="checkbox"],
 .ui.checkbox input[type="radio"] {
   cursor: pointer;
@@ -59,6 +60,8 @@
   outline: none;
   font-size: 1em;
 }
+
+/*noinspection ALL*/
 .ui.checkbox .box:before,
 .ui.checkbox label:before {
   position: absolute;
@@ -80,6 +83,7 @@
     Checkmark
 ---------------*/
 
+/*noinspection ALL*/
 .ui.checkbox .box:after,
 .ui.checkbox label:after {
   position: absolute;
@@ -278,6 +282,7 @@
 }
 
 /* Box */
+/*noinspection ALL*/
 .ui.radio.checkbox .box:before,
 .ui.radio.checkbox label:before {
   content: '';
@@ -301,6 +306,7 @@
 }
 
 /* Radio Checkbox */
+/*noinspection ALL*/
 .ui.radio.checkbox .box:after,
 .ui.radio.checkbox label:after {
   top: 1px;
@@ -372,6 +378,7 @@
 }
 
 /* Line */
+/*noinspection ALL*/
 .ui.slider.checkbox .box:before,
 .ui.slider.checkbox label:before {
   display: block;
@@ -392,6 +399,7 @@
 }
 
 /* Handle */
+/*noinspection ALL*/
 .ui.slider.checkbox .box:after,
 .ui.slider.checkbox label:after {
   background: #FFFFFF -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
@@ -480,6 +488,7 @@
 }
 
 /* Switch */
+/*noinspection ALL*/
 .ui.toggle.checkbox .box:before,
 .ui.toggle.checkbox label:before {
   display: block;
@@ -498,6 +507,7 @@
 }
 
 /* Handle */
+/*noinspection ALL*/
 .ui.toggle.checkbox .box:after,
 .ui.toggle.checkbox label:after {
   background: #FFFFFF -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
@@ -571,6 +581,7 @@
      Fitted
 ---------------*/
 
+/*noinspection ALL*/
 .ui.fitted.checkbox .box,
 .ui.fitted.checkbox label {
   padding-left: 0em !important;

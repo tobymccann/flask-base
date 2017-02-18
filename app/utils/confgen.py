@@ -124,7 +124,7 @@ class MakoConfigGenerator:
                 if line != "":
                     result += line
                     if len(lines) != counter:
-                         result += "\n"
+                        result += "\n"
                 counter += 1
 
         return result

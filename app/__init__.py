@@ -1,5 +1,4 @@
 import os
-
 from celery import Celery
 from flask import Flask
 from flask_assets import Environment
@@ -9,9 +8,8 @@ from flask_mail import Mail
 from flask_rq import RQ
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
-
 from config import config
-from .assets import app_css, app_js, vendor_css, vendor_js
+from .assets import app_css, app_js, vendor_css, vendor_js  # noqa
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -30,7 +28,7 @@ login_manager.login_view = 'account.login'
 def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
     # not using sqlalchemy event system, hence disabling it
 
     config[config_name].init_app(app)

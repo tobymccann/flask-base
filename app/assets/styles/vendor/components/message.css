@@ -13,6 +13,7 @@
             Message
 *******************************/
 
+/*noinspection ALL*/
 .ui.message {
   position: relative;
   min-height: 1em;
@@ -26,9 +27,13 @@
   border-radius: 0.28571429rem;
   box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.22) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
 }
+
+/*noinspection ALL*/
 .ui.message:first-child {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.message:last-child {
   margin-bottom: 0em;
 }
@@ -39,6 +44,7 @@
 
 
 /* Header */
+/*noinspection ALL*/
 .ui.message .header {
   display: block;
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -52,13 +58,18 @@
 }
 
 /* Paragraph */
+/*noinspection ALL*/
 .ui.message p {
   opacity: 0.85;
   margin: 0.75em 0em;
 }
+
+/*noinspection ALL*/
 .ui.message p:first-child {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.message p:last-child {
   margin-bottom: 0em;
 }
@@ -67,6 +78,7 @@
 }
 
 /* List */
+/*noinspection ALL*/
 .ui.message .list:not(.ui) {
   text-align: left;
   padding: 0em;
@@ -74,12 +86,18 @@
   list-style-position: inside;
   margin: 0.5em 0em 0em;
 }
+
+/*noinspection ALL*/
 .ui.message .list:not(.ui):first-child {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.message .list:not(.ui):last-child {
   margin-bottom: 0em;
 }
+
+/*noinspection ALL*/
 .ui.message .list:not(.ui) li {
   position: relative;
   list-style-type: none;
@@ -93,6 +111,8 @@
   height: 100%;
   vertical-align: baseline;
 }
+
+/*noinspection ALL*/
 .ui.message .list:not(.ui) li:last-child {
   margin-bottom: 0em;
 }
@@ -103,6 +123,7 @@
 }
 
 /* Close Icon */
+/*noinspection ALL*/
 .ui.message > .close.icon {
   cursor: pointer;
   position: absolute;
@@ -118,9 +139,12 @@
 }
 
 /* First / Last Element */
+/*noinspection ALL*/
 .ui.message > :first-child {
   margin-top: 0em;
 }
+
+/*noinspection ALL*/
 .ui.message > :last-child {
   margin-bottom: 0em;
 }
@@ -130,6 +154,7 @@
             Coupling
 *******************************/
 
+/*noinspection ALL*/
 .ui.dropdown .menu > .message {
   margin: 0px -1px;
 }
@@ -179,6 +204,7 @@
     Attached
 ---------------*/
 
+/*noinspection ALL*/
 .ui.attached.message {
   margin-bottom: -1px;
   border-radius: 0.28571429rem 0.28571429rem 0em 0em;
@@ -186,10 +212,14 @@
   margin-left: -1px;
   margin-right: -1px;
 }
+
+/*noinspection ALL*/
 .ui.attached + .ui.attached.message:not(.top):not(.bottom) {
   margin-top: -1px;
   border-radius: 0em;
 }
+
+/*noinspection ALL*/
 .ui.bottom.attached.message {
   margin-top: -1px;
   border-radius: 0em 0em 0.28571429rem 0.28571429rem;
@@ -233,6 +263,8 @@
           flex: 1 1 auto;
   vertical-align: middle;
 }
+
+/*noinspection ALL*/
 .ui.icon.message .icon:not(.close) + .content {
   padding-left: 0rem;
 }
@@ -244,6 +276,7 @@
     Floating
 ---------------*/
 
+/*noinspection ALL*/
 .ui.floating.message {
   box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.22) inset, 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.15);
 }
@@ -267,6 +300,8 @@
   background-color: #FCFFF5;
   color: #2C662D;
 }
+
+/*noinspection ALL*/
 .ui.positive.message,
 .ui.attached.positive.message {
   box-shadow: 0px 0px 0px 1px #A3C293 inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
@@ -280,6 +315,8 @@
   background-color: #FFF6F6;
   color: #9F3A38;
 }
+
+/*noinspection ALL*/
 .ui.negative.message,
 .ui.attached.negative.message {
   box-shadow: 0px 0px 0px 1px #E0B4B4 inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
@@ -293,6 +330,8 @@
   background-color: #F8FFFF;
   color: #276F86;
 }
+
+/*noinspection ALL*/
 .ui.info.message,
 .ui.attached.info.message {
   box-shadow: 0px 0px 0px 1px #A9D5DE inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
@@ -306,6 +345,8 @@
   background-color: #FFFAF3;
   color: #573A08;
 }
+
+/*noinspection ALL*/
 .ui.warning.message,
 .ui.attached.warning.message {
   box-shadow: 0px 0px 0px 1px #C9BA9B inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
@@ -319,6 +360,8 @@
   background-color: #FFF6F6;
   color: #9F3A38;
 }
+
+/*noinspection ALL*/
 .ui.error.message,
 .ui.attached.error.message {
   box-shadow: 0px 0px 0px 1px #E0B4B4 inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
@@ -332,6 +375,8 @@
   background-color: #FCFFF5;
   color: #2C662D;
 }
+
+/*noinspection ALL*/
 .ui.success.message,
 .ui.attached.success.message {
   box-shadow: 0px 0px 0px 1px #A3C293 inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
@@ -346,6 +391,8 @@
   background-color: #1B1C1D;
   color: rgba(255, 255, 255, 0.9);
 }
+
+/*noinspection ALL*/
 .ui.red.message {
   background-color: #FFE8E6;
   color: #DB2828;
@@ -354,6 +401,8 @@
 .ui.red.message .header {
   color: #c82121;
 }
+
+/*noinspection ALL*/
 .ui.orange.message {
   background-color: #FFEDDE;
   color: #F2711C;
@@ -362,6 +411,8 @@
 .ui.orange.message .header {
   color: #e7640d;
 }
+
+/*noinspection ALL*/
 .ui.yellow.message {
   background-color: #FFF8DB;
   color: #B58105;
@@ -370,6 +421,8 @@
 .ui.yellow.message .header {
   color: #9c6f04;
 }
+
+/*noinspection ALL*/
 .ui.olive.message {
   background-color: #FBFDEF;
   color: #8ABC1E;
@@ -378,6 +431,8 @@
 .ui.olive.message .header {
   color: #7aa61a;
 }
+
+/*noinspection ALL*/
 .ui.green.message {
   background-color: #E5F9E7;
   color: #1EBC30;
@@ -386,6 +441,8 @@
 .ui.green.message .header {
   color: #1aa62a;
 }
+
+/*noinspection ALL*/
 .ui.teal.message {
   background-color: #E1F7F7;
   color: #10A3A3;
@@ -394,6 +451,8 @@
 .ui.teal.message .header {
   color: #0e8c8c;
 }
+
+/*noinspection ALL*/
 .ui.blue.message {
   background-color: #DFF0FF;
   color: #2185D0;
@@ -402,6 +461,8 @@
 .ui.blue.message .header {
   color: #1e77ba;
 }
+
+/*noinspection ALL*/
 .ui.violet.message {
   background-color: #EAE7FF;
   color: #6435C9;
@@ -410,6 +471,8 @@
 .ui.violet.message .header {
   color: #5a30b5;
 }
+
+/*noinspection ALL*/
 .ui.purple.message {
   background-color: #F6E7FF;
   color: #A333C8;
@@ -418,6 +481,8 @@
 .ui.purple.message .header {
   color: #922eb4;
 }
+
+/*noinspection ALL*/
 .ui.pink.message {
   background-color: #FFE3FB;
   color: #E03997;
@@ -426,6 +491,8 @@
 .ui.pink.message .header {
   color: #dd238b;
 }
+
+/*noinspection ALL*/
 .ui.brown.message {
   background-color: #F1E2D3;
   color: #A5673F;

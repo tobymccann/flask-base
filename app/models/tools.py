@@ -7,7 +7,6 @@ from ..exception import TemplateVariableNotFoundException, TemplateValueNotFound
 from ..utils import MakoConfigGenerator
 
 
-
 class TemplateValue(db.Model):
     """
     TemplateValue

@@ -8,7 +8,7 @@
     <p class="uk-text-muted uk-text-small">in Config Template <strong>{{ config_template.name }}</strong></p>
     <ul class="uk-subnav uk-subnav-line">
         <li>
-            <a href="{{ url_for("view_config_template", project_id=config_template.project.id, config_template_id=config_template.id) }}" id="_back">
+            <a href="{{ url_for("tools.view_config_template", project_id=config_template.project.id, config_template_id=config_template.id) }}" id="_back">
                 <span class="uk-icon-arrow-left"></span> back
             </a>
         </li>
