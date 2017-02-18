@@ -4,7 +4,6 @@ views for the Project data object
 import logging
 from flask import render_template, url_for, redirect, request, flash
 from sqlalchemy.exc import IntegrityError
-
 from .. import db
 from .forms import ProjectForm
 from ..models import Project

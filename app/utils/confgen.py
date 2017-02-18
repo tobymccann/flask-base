@@ -12,7 +12,7 @@ logger = logging.getLogger("confgen")
 
 class TemplateSyntaxException(BaseException):
     """
-    This exception is raised, if the rendering of the mako template failed
+    This exception is raised if the rendering of the mako template failed
     """
     pass
 
