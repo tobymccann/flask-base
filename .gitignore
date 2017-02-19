@@ -14,3 +14,14 @@ dist
 .idea
 dump.rdb
 config.env
+
+net_info.py
+__pycache__/
+app/__pycache__/
+app/account/__pycache__/
+app/admin/__pycache__/
+app/main/__pycache__/
+app/models/__pycache__/
+app/projects/__pycache__/
+app/tools/__pycache__/
+app/utils/__pycache__/
