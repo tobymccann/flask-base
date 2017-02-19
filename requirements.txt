@@ -2,6 +2,7 @@ alembic==0.8.10
 appdirs==1.4.0
 billiard
 blinker==1.4
+bs4
 click==6.7
 celery
 Faker==0.7.7
